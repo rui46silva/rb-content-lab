@@ -16,8 +16,8 @@
 	<h1 class="wp-block-heading has-display-font-size" style="margin-top:1.25rem;margin-bottom:1.5rem">Conteúdo que faz a sua marca ser a referência — não mais uma no feed.</h1>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"className":"rb-measure","fontSize":"large","textColor":"muted"} -->
-	<p class="rb-measure has-muted-color has-text-color has-large-font-size">Estratégia, direção editorial e execução de nível para marcas que querem ser lembradas. Menos ruído, mais autoridade.</p>
+	<!-- wp:paragraph {"className":"rb-measure","fontSize":"large","textColor":"muted-2"} -->
+	<p class="rb-measure has-muted-2-color has-text-color has-large-font-size">Estratégia, direção editorial e execução de nível para marcas que querem ser lembradas. Menos ruído, mais autoridade.</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"2.5rem"},"blockGap":{"left":"1rem"}}}} -->
@@ -31,8 +31,8 @@
 	</div>
 	<!-- /wp:buttons -->
 
-	<!-- wp:paragraph {"fontSize":"small","textColor":"muted","style":{"spacing":{"margin":{"top":"1.75rem"}},"typography":{"letterSpacing":"0.02em"}}} -->
-	<p class="has-muted-color has-text-color has-small-font-size" style="margin-top:1.75rem;letter-spacing:0.02em">Resposta em 24h · Sem compromisso · +40 marcas acompanhadas</p>
+	<!-- wp:paragraph {"fontSize":"small","textColor":"muted-2","style":{"spacing":{"margin":{"top":"1.75rem"}},"typography":{"letterSpacing":"0.02em"}}} -->
+	<p class="has-muted-2-color has-text-color has-small-font-size" style="margin-top:1.75rem;letter-spacing:0.02em">Resposta em 24h · Sem compromisso · +40 marcas acompanhadas</p>
 	<!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->

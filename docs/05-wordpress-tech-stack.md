@@ -35,10 +35,10 @@ disciplinar o uso para não degradar o Lighthouse.
   "settings": {
     "color": {
       "palette": [
-        { "slug": "ink",       "color": "#14110F", "name": "Ink" },
-        { "slug": "paper",     "color": "#F7F4EF", "name": "Paper" },
-        { "slug": "signature", "color": "#E8583A", "name": "Signature" },
-        { "slug": "accent",    "color": "#2E4A45", "name": "Accent" }
+        { "slug": "ink",       "color": "#1A1A40", "name": "Ink (Navy)" },
+        { "slug": "paper",     "color": "#EFEEEC", "name": "Paper" },
+        { "slug": "signature", "color": "#D85436", "name": "Signature (Coral)" },
+        { "slug": "accent",    "color": "#C9A55C", "name": "Accent (Gold)" }
       ]
     },
     "typography": {

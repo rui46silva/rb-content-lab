@@ -65,11 +65,13 @@ rb-content-lab/
 
 | Token | Valor | Uso |
 |-------|-------|-----|
-| `ink` | `#14110F` | Fundos escuros, texto |
-| `paper` / `paper-2` | `#F7F4EF` / `#EFEAE1` | Fundos claros alternados |
-| `muted` | `#6B6560` | Texto secundário |
-| `signature` | `#E8583A` | CTAs, destaques (terracota) |
-| `accent` | `#2E4A45` | Sofisticação, foco |
+| `ink` | `#1A1A40` | Cor principal — navy profundo (fundos escuros, texto, headings) |
+| `ink-soft` / `ink-deep` | `#2C2C5C` / `#111130` | Cartões sobre navy / profundidade extra (rodapé) |
+| `paper` / `paper-2` | `#EFEEEC` / `#E5E3DE` | Cor secundária — off-white quente e a sua variante alternada |
+| `muted` | `#565676` | Texto secundário sobre fundo claro |
+| `muted-2` | `#B7B7CC` | Texto secundário sobre fundo navy (contraste AA) |
+| `signature` | `#D85436` | CTAs, destaques, foco (coral) |
+| `accent` | `#C9A55C` | Detalhe editorial premium (dourado) |
 
 - **Display:** Fraunces (serifa editorial variável)
 - **Corpo:** Hanken Grotesk (grotesca variável)

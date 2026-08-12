@@ -18,8 +18,8 @@
 
 	<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"1.5rem","left":"1.5rem"}}}} -->
 	<div class="wp-block-columns">
-		<!-- wp:column {"style":{"spacing":{"padding":"2rem"},"border":{"radius":"4px","width":"1px","color":"#14110f14"}}} -->
-		<div class="wp-block-column has-border-color" style="border-color:#14110f14;border-width:1px;border-radius:4px;padding:2rem">
+		<!-- wp:column {"style":{"spacing":{"padding":"2rem"},"border":{"radius":"4px","width":"1px","color":"#1a1a4014"}}} -->
+		<div class="wp-block-column has-border-color" style="border-color:#1a1a4014;border-width:1px;border-radius:4px;padding:2rem">
 			<!-- wp:heading {"level":3,"fontSize":"x-large"} -->
 			<h3 class="wp-block-heading has-x-large-font-size">Estratégia de Conteúdo</h3>
 			<!-- /wp:heading -->
@@ -30,8 +30,8 @@
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"style":{"spacing":{"padding":"2rem"},"border":{"radius":"4px","width":"1px","color":"#14110f14"}}} -->
-		<div class="wp-block-column has-border-color" style="border-color:#14110f14;border-width:1px;border-radius:4px;padding:2rem">
+		<!-- wp:column {"style":{"spacing":{"padding":"2rem"},"border":{"radius":"4px","width":"1px","color":"#1a1a4014"}}} -->
+		<div class="wp-block-column has-border-color" style="border-color:#1a1a4014;border-width:1px;border-radius:4px;padding:2rem">
 			<!-- wp:heading {"level":3,"fontSize":"x-large"} -->
 			<h3 class="wp-block-heading has-x-large-font-size">Gestão Editorial &amp; Social</h3>
 			<!-- /wp:heading -->
@@ -42,8 +42,8 @@
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"style":{"spacing":{"padding":"2rem"},"border":{"radius":"4px","width":"1px","color":"#14110f14"}}} -->
-		<div class="wp-block-column has-border-color" style="border-color:#14110f14;border-width:1px;border-radius:4px;padding:2rem">
+		<!-- wp:column {"style":{"spacing":{"padding":"2rem"},"border":{"radius":"4px","width":"1px","color":"#1a1a4014"}}} -->
+		<div class="wp-block-column has-border-color" style="border-color:#1a1a4014;border-width:1px;border-radius:4px;padding:2rem">
 			<!-- wp:heading {"level":3,"fontSize":"x-large"} -->
 			<h3 class="wp-block-heading has-x-large-font-size">Copywriting &amp; Ghostwriting</h3>
 			<!-- /wp:heading -->
@@ -54,8 +54,8 @@
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"style":{"spacing":{"padding":"2rem"},"border":{"radius":"4px","width":"1px","color":"#14110f14"}}} -->
-		<div class="wp-block-column has-border-color" style="border-color:#14110f14;border-width:1px;border-radius:4px;padding:2rem">
+		<!-- wp:column {"style":{"spacing":{"padding":"2rem"},"border":{"radius":"4px","width":"1px","color":"#1a1a4014"}}} -->
+		<div class="wp-block-column has-border-color" style="border-color:#1a1a4014;border-width:1px;border-radius:4px;padding:2rem">
 			<!-- wp:heading {"level":3,"fontSize":"x-large"} -->
 			<h3 class="wp-block-heading has-x-large-font-size">Direção de Arte &amp; Branding</h3>
 			<!-- /wp:heading -->

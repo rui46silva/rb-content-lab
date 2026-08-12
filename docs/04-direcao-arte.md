@@ -45,21 +45,28 @@ cor usada com intenção cirúrgica.
 
 ## 4. Cor
 
-Fugir do azul-startup. Propor uma paleta com **uma cor de assinatura ousada** +
-neutros ricos.
+Paleta de marca construída à volta de duas cores base: **navy profundo** (principal) +
+**off-white quente** (secundária), com acentos quentes que contrastam com a base fria.
 
-**Direção proposta (exemplo — validar com marca):**
+**Paleta oficial:**
 
 ```
-Base escura   #14110F  (quase-preto quente, "ink")
-Base clara    #F7F4EF  (off-white quente, "paper")
-Neutro médio  #6B6560  (texto secundário)
-Assinatura    #E8583A  (laranja-terracota — energia, distinção)
-Acento frio   #2E4A45  (verde-petróleo profundo — sofisticação)
+Principal (navy)  #1A1A40  base escura, headings, texto — "ink"
+  ↳ navy soft     #2C2C5C  cartões sobre navy, hover
+  ↳ navy deep     #111130  profundidade extra (rodapé)
+Secundária        #EFEEEC  off-white quente, base clara — "paper"
+  ↳ paper alt     #E5E3DE  secções alternadas
+Neutro (claro)    #565676  texto secundário sobre fundo claro
+Neutro (escuro)   #B7B7CC  texto secundário sobre navy (contraste AA)
+Assinatura        #D85436  coral quente — CTAs, destaques, energia
+Acento            #C9A55C  dourado suave — detalhe editorial premium
 ```
 
-- **Regra 60/30/10:** 60% neutro base, 30% secundário, 10% cor de assinatura (CTAs,
-  destaques). A cor de assinatura nunca se dilui — é o que se memoriza.
+Navy + off-white dão a base sóbria e premium; o **coral** é a cor de conversão (pop nos
+CTAs contra o navy frio) e o **dourado** o toque editorial de luxo.
+
+- **Regra 60/30/10:** 60% base (navy/off-white), 30% secundário, 10% acentos (coral nos
+  CTAs, dourado em detalhes). Os acentos nunca se diluem — são o que se memoriza.
 - Garantir **contraste AA/AAA** (ver doc 06 — acessibilidade conta para Lighthouse).
 - Definir tokens (ver secção 7) — nunca hex soltos espalhados pelo CSS.
 
@@ -87,11 +94,14 @@ Definir como CSS custom properties / variáveis do tema para consistência e man
 ```css
 :root {
   /* Cor */
-  --color-ink:        #14110F;
-  --color-paper:      #F7F4EF;
-  --color-muted:      #6B6560;
-  --color-signature:  #E8583A;
-  --color-accent:     #2E4A45;
+  --color-ink:        #1A1A40;  /* principal — navy */
+  --color-ink-soft:   #2C2C5C;
+  --color-paper:      #EFEEEC;  /* secundária — off-white */
+  --color-paper-2:    #E5E3DE;
+  --color-muted:      #565676;  /* texto secundário (claro) */
+  --color-muted-2:    #B7B7CC;  /* texto secundário (sobre navy) */
+  --color-signature:  #D85436;  /* coral — CTAs */
+  --color-accent:     #C9A55C;  /* dourado — detalhe */
 
   /* Tipografia */
   --font-display: "Fraunces", Georgia, serif;

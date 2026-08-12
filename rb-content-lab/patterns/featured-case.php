@@ -15,8 +15,8 @@
 			<!-- wp:paragraph {"className":"rb-metric"} -->
 			<p class="rb-metric" style="color:var(--wp--preset--color--signature)">+312%</p>
 			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"fontSize":"large","textColor":"muted","style":{"spacing":{"margin":{"top":"0.5rem"}}}} -->
-			<p class="has-muted-color has-text-color has-large-font-size" style="margin-top:0.5rem">de leads qualificados em 6 meses</p>
+			<!-- wp:paragraph {"fontSize":"large","textColor":"muted-2","style":{"spacing":{"margin":{"top":"0.5rem"}}}} -->
+			<p class="has-muted-2-color has-text-color has-large-font-size" style="margin-top:0.5rem">de leads qualificados em 6 meses</p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
@@ -29,8 +29,8 @@
 			<!-- wp:heading {"level":2,"fontSize":"xxx-large","style":{"spacing":{"margin":{"top":"1rem","bottom":"1.25rem"}}}} -->
 			<h2 class="wp-block-heading has-xxx-large-font-size" style="margin-top:1rem;margin-bottom:1.25rem">Como levámos a [Cliente] de invisível a referência no seu setor.</h2>
 			<!-- /wp:heading -->
-			<!-- wp:paragraph {"textColor":"muted","fontSize":"large"} -->
-			<p class="has-muted-color has-text-color has-large-font-size">Reposicionámos a mensagem, criámos um sistema editorial consistente e ligámos cada peça a objetivos de negócio. O resultado foi um pipeline previsível.</p>
+			<!-- wp:paragraph {"textColor":"muted-2","fontSize":"large"} -->
+			<p class="has-muted-2-color has-text-color has-large-font-size">Reposicionámos a mensagem, criámos um sistema editorial consistente e ligámos cada peça a objetivos de negócio. O resultado foi um pipeline previsível.</p>
 			<!-- /wp:paragraph -->
 			<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"1.75rem"}}}} -->
 			<div class="wp-block-buttons" style="margin-top:1.75rem">

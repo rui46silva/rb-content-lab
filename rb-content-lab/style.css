@@ -22,7 +22,7 @@ Tags: full-site-editing, block-patterns, custom-colors, custom-logo, editor-styl
 
 /* --- Acessibilidade: foco sempre visível (conta para Lighthouse) --- */
 :where(a, button, input, select, textarea, .wp-block-button__link):focus-visible {
-	outline: 2px solid var(--wp--preset--color--accent);
+	outline: 2px solid var(--wp--preset--color--signature);
 	outline-offset: 3px;
 	border-radius: 2px;
 }
