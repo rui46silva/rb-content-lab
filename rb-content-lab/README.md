@@ -1,129 +1,93 @@
-# RB Content Lab — WordPress Block Theme
+# RB Content Lab — WordPress Theme (PHP)
 
-Tema de blocos (Full Site Editing) da **RB Content Lab**, agência de comunicação e
-conteúdo premium. Direção de arte editorial, tipografia auto-hospedada e patterns de
-conversão prontos a usar. Construído para performance (Lighthouse 90+), SEO e fácil
-manutenção — sem page builders externos, sem lock-in.
+Tema WordPress da **RB Content Lab**. **Foco atual: a landing page de captação
+"Direction over Noise"** — construída em **PHP clássico**, com um template de página e
+**textos editáveis por página** (via ACF). Direção de arte editorial, tipografia
+auto-hospedada, design tokens e SEO integrado.
 
-![Pré-visualização da homepage](screenshot.png)
+![Pré-visualização da landing](screenshot.png)
 
-## Porquê um block theme (e não um child theme + builder)
-
-- **Zero lock-in:** vive no editor de blocos nativo do WordPress. Se largar qualquer
-  plugin, o conteúdo continua a existir.
-- **Performance:** HTML limpo, CSS mínimo, fontes auto-hospedadas (~124KB).
-- **Manutenção:** os design tokens estão num único ficheiro (`theme.json`). Mudar a cor
-  de assinatura é editar uma linha — propaga para todo o site.
+> **Nota de arquitetura:** o tema arrancou como block theme (FSE). A pedido, a landing foi
+> reconstruída em **PHP** para permitir editar os textos dentro da página. Os artefactos
+> do block theme (homepage, patterns) foram preservados em [`future/`](future/) para
+> retomar mais tarde. O `theme.json` mantém-se para os design tokens.
 
 ## Instalação
 
-1. Comprima a pasta `rb-content-lab/` num `.zip` (a pasta tem de ser a raiz do zip).
-2. No WordPress: **Aparência → Temas → Adicionar novo → Carregar tema** → escolha o zip.
-3. Ative **RB Content Lab**.
-4. **Definições → Leitura:** defina uma página estática como página inicial para usar o
-   template `front-page` (a homepage de conversão). Em alternativa, o template já é
-   aplicado automaticamente à *front page*.
-5. **Aparência → Editor** para ajustar cabeçalho, rodapé, menus e conteúdo.
+1. Comprima a pasta `rb-content-lab/` num `.zip` (a pasta é a raiz do zip).
+2. **Aparência → Temas → Adicionar novo → Carregar tema** → escolha o zip → **Ativar**.
+3. Instale o plugin **ACF (Advanced Custom Fields)** — grátis — para editar os textos.
+   *(Sem ACF a landing funciona na mesma, com os textos-base do tema.)*
 
-> Alternativa via WP-CLI: coloque a pasta em `wp-content/themes/` e corra
-> `wp theme activate rb-content-lab`.
+## Publicar a landing
+
+1. **Páginas → Adicionar nova.** Título ex.: "Direction over Noise" (slug `/direcao`).
+2. Na barra lateral: **Atributos da página → Modelo → "Landing — Direction over Noise"**.
+3. **Publicar.**
+4. Para editar os textos: abra a página e use o painel **"Landing — Direction over
+   Noise"** (campos ACF), organizado por separadores (Hero, Manifesto, Prova, Oferta,
+   FAQ, CTA). Ver todos os textos em [`docs/09-landing-textos.md`](../docs/09-landing-textos.md).
+
+## Como funciona a editabilidade
+
+```
+inc/landing-defaults.php   → textos-base (defaults) + helper rb_landing_text()
+inc/landing-fields.php     → regista os campos ACF (por código) ligados ao template
+page-templates/landing.php → o template PHP: rb_landing_text('chave') por cada texto
+```
+
+`rb_landing_text('chave')` devolve o valor do campo ACF da página; se estiver vazio ou o
+ACF não estiver ativo, devolve o texto-base. **Uma só chave, uma só verdade.**
 
 ## Estrutura
 
 ```
 rb-content-lab/
-├── style.css              Cabeçalho do tema + utilitários editoriais e foco acessível
-├── theme.json             Design tokens: cor, tipografia, espaçamento, estilos (v2)
-├── functions.php          Supports, enqueue, preload de fonte, block styles, patterns
+├── style.css               Cabeçalho do tema, @font-face, tokens (--rb-*) e base
+├── theme.json              Design tokens para o editor de blocos e estilos globais
+├── functions.php           Supports, enqueue, preload de fonte, includes
+├── index.php               Fallback clássico (páginas/artigos futuros)
+├── header.php              Cabeçalho genérico
+├── header-landing.php      Cabeçalho minimal da landing (logo + 1 CTA)
+├── footer.php              Rodapé genérico (fecha o documento)
+├── page-templates/
+│   └── landing.php         ★ Template PHP da landing (Template Name)
 ├── inc/
-│   └── schema.php         SEO — JSON-LD (Organization + WebSite + ProfessionalService)
-├── screenshot.png         Pré-visualização (1200×900)
-├── assets/fonts/          Fraunces + Hanken Grotesk + JetBrains Mono (woff2, OFL)
-├── parts/
-│   ├── header.html        Cabeçalho sticky com navegação + CTA
-│   ├── header-landing.html Cabeçalho minimal (só logo + 1 CTA) para a landing
-│   └── footer.html        Rodapé de 4 colunas com newsletter e legais
-├── templates/
-│   ├── front-page.html    Homepage — compõe os patterns de conversão
-│   ├── page-landing.html  Landing de captação "Direction over noise"
-│   ├── index.html         Fallback / listagem
-│   ├── page.html          Página com título
-│   ├── page-no-title.html Página sem título (landing pages)
-│   ├── single.html        Artigo do blog "Perspetivas" + CTA + comentários
-│   ├── archive.html       Arquivo de categoria/tag
-│   ├── search.html        Resultados de pesquisa
-│   └── 404.html           Erro 404 útil (com CTA e pesquisa)
-└── patterns/              Secções (categoria "RB Content Lab")
-    ├── hero.php · logos.php · problem-pas.php · services.php
-    ├── featured-case.php · method.php · testimonials.php
-    ├── about-short.php · cta-final.php          (homepage)
-    └── landing-hero.php · landing-manifesto.php · landing-proof.php
-        landing-offer.php · landing-faq.php · landing-cta.php   (landing)
+│   ├── landing-defaults.php Textos-base + helper de leitura
+│   ├── landing-fields.php   Campos ACF (registados por código)
+│   └── schema.php           SEO — JSON-LD (Organization + WebSite + ProfessionalService)
+├── assets/
+│   ├── css/landing.css      Estilos da landing (carregados só no template)
+│   └── fonts/               Fraunces + Hanken Grotesk + JetBrains Mono (OFL)
+├── screenshot.png
+└── future/                  Block theme preservado (homepage, patterns, parts) — futuro
 ```
 
-## Landing de captação "Direction over Noise"
+## Design tokens
 
-Template dedicado (`page-landing`) para atrair novos clientes, com cabeçalho minimal
-(reduz fugas), manifesto artístico, prova de valor com garantia, formulário de
-diagnóstico e FAQ com schema. Setup de CRM (FluentCRM), formulário e SEO documentado em
-[`docs/08-landing-crm-seo.md`](../docs/08-landing-crm-seo.md).
+Definidos em `style.css` como variáveis `--rb-*` (autossuficientes) e espelhados no
+`theme.json`:
 
-Publicar: **Páginas → Adicionar nova → Template: "Landing (captação de leads)"**.
+| Token | Valor | Uso |
+|-------|-------|-----|
+| `--rb-ink` | `#1A1A40` | Navy (fundos escuros, texto) |
+| `--rb-paper` / `--rb-paper-2` | `#EFEEEC` / `#E5E3DE` | Off-white e variante |
+| `--rb-muted` / `--rb-muted-2` | `#565676` / `#B7B7CC` | Texto secundário (claro / escuro) |
+| `--rb-signature` | `#D85436` | Coral — CTAs, destaques, foco |
+| `--rb-accent` | `#C9A55C` | Dourado — detalhe editorial |
+
+Tipografia: **Fraunces** (display), **Hanken Grotesk** (corpo), **JetBrains Mono** (detalhe).
 
 ## SEO integrado
 
 - **JSON-LD** (`inc/schema.php`): Organization + WebSite + ProfessionalService no `<head>`,
   com guarda anti-duplicação se Rank Math/Yoast estiver ativo.
-- **FAQPage schema** no pattern `landing-faq` → elegível para rich results.
+- **FAQPage schema** gerado dinamicamente no template, a partir dos textos da FAQ.
 - **Preload** da fonte de display → melhora o LCP (Core Web Vitals).
+- Fontes self-hosted, HTML limpo, CSS da landing só carregado no template.
 
-## Design tokens (resumo)
-
-| Token | Valor | Uso |
-|-------|-------|-----|
-| `ink` | `#1A1A40` | Cor principal — navy profundo (fundos escuros, texto, headings) |
-| `ink-soft` / `ink-deep` | `#2C2C5C` / `#111130` | Cartões sobre navy / profundidade extra (rodapé) |
-| `paper` / `paper-2` | `#EFEEEC` / `#E5E3DE` | Cor secundária — off-white quente e a sua variante alternada |
-| `muted` | `#565676` | Texto secundário sobre fundo claro |
-| `muted-2` | `#B7B7CC` | Texto secundário sobre fundo navy (contraste AA) |
-| `signature` | `#D85436` | CTAs, destaques, foco (coral) |
-| `accent` | `#C9A55C` | Detalhe editorial premium (dourado) |
-
-- **Display:** Fraunces (serifa editorial variável)
-- **Corpo:** Hanken Grotesk (grotesca variável)
-- **Detalhe:** JetBrains Mono (etiquetas, números)
-
-Todos os tokens estão em `theme.json` e disponíveis no editor (paleta, tamanhos de fonte,
-espaçamentos). Editar aí é editar o site inteiro.
-
-## Patterns de conversão
-
-Inseríveis em qualquer página (**+ → Patterns → RB Content Lab**). A `front-page` já os
-compõe pela ordem do funil AIDA/PAS: hero → prova → problema → serviços → caso → método →
-testemunhos → sobre → CTA final.
-
-## Classes utilitárias (em `style.css`)
-
-- `.rb-eyebrow` — etiqueta em mono, maiúsculas, cor de assinatura.
-- `.rb-metric` — número gigante como elemento gráfico.
-- `.rb-measure` — largura de leitura editorial (~65ch).
-- `.rb-link-arrow` — link com sublinhado animado.
-- `.rb-logos` — logótipos monocromáticos que ganham cor no hover.
-- Estilo de bloco **Contorno** para botões secundários; **Editorial (sombra)** para imagens.
-
-## Personalização rápida
-
-- **Cor de marca:** `theme.json` → `settings.color.palette` → `signature`.
-- **Tipografia:** `settings.typography.fontFamilies` (ver `assets/fonts/README.md` para
-  trocar o corpo por Satoshi).
-- **Cabeçalho/rodapé:** Aparência → Editor → Padrões → Partes de template.
-
-## Notas de performance & SEO
-
-- Fontes auto-hospedadas com `font-display: swap` e `preload` recomendado para a display.
-- Sem JS de tema; interatividade fica a cargo dos blocos do core.
-- Emparelhar com um plugin de cache (WP Rocket) e SEO (Rank Math) — ver `docs/` do repo.
-- `wp_generator` e metadados obsoletos removidos do `<head>` (ver `functions.php`).
+Setup de CRM (FluentCRM), formulário e SEO em
+[`docs/08-landing-crm-seo.md`](../docs/08-landing-crm-seo.md).
 
 ## Licença
 

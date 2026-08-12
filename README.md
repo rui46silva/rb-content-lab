@@ -22,6 +22,7 @@ Vá do "porquê" (estratégia) ao "como" (implementação).
 | 06 | [SEO & Performance (Lighthouse 90+)](docs/06-seo-performance.md) | On-page, técnico, Core Web Vitals |
 | 07 | [Roadmap de Implementação](docs/07-roadmap-implementacao.md) | Sprints, checklist de lançamento e pós-lançamento |
 | 08 | [Landing "Direction over Noise": CRM, SEO & Lançamento](docs/08-landing-crm-seo.md) | Landing de captação, FluentCRM, formulário e SEO |
+| 09 | [Textos da Landing](docs/09-landing-textos.md) | Copy da landing, mapeado aos campos editáveis (ACF) |
 
 ## Princípios não-negociáveis
 

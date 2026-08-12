@@ -1,119 +1,88 @@
 <?php
 /**
- * RB Content Lab — funções do tema.
+ * RB Content Lab — funções do tema (PHP clássico).
  *
- * Tema de blocos (FSE). Mantém-se propositadamente enxuto: a maioria da
- * configuração vive em theme.json. Aqui ficam só supports, enfileiramento de
- * estilos, estilos de bloco e categorias de patterns.
+ * Foco atual: landing page de captação "Direction over Noise", com template PHP
+ * e textos editáveis por página (ACF). O tema mantém theme.json para os design
+ * tokens e estilos globais. Artefactos do block theme ficam em /future para uso
+ * posterior.
  *
  * @package RB_Content_Lab
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Sem acesso direto.
+	exit;
 }
 
+define( 'RB_CONTENT_LAB_VERSION', '2.0.0' );
+
+// Textos-base + helper de leitura da landing.
+require_once get_template_directory() . '/inc/landing-defaults.php';
+// Campos ACF da landing (registados por código).
+require_once get_template_directory() . '/inc/landing-fields.php';
 // SEO — dados estruturados (JSON-LD).
 require_once get_template_directory() . '/inc/schema.php';
 
-if ( ! function_exists( 'rb_content_lab_setup' ) ) {
-	/**
-	 * Suportes do tema.
-	 */
-	function rb_content_lab_setup() {
-		add_theme_support( 'wp-block-styles' );
-		add_theme_support( 'responsive-embeds' );
-		add_theme_support( 'editor-styles' );
-		add_theme_support( 'html5', array( 'search-form', 'gallery', 'caption', 'style', 'script', 'navigation-widgets' ) );
-		add_theme_support( 'title-tag' );
-		add_theme_support( 'post-thumbnails' );
-		add_theme_support( 'custom-logo', array(
-			'height'      => 48,
-			'width'       => 200,
-			'flex-height' => true,
-			'flex-width'  => true,
-		) );
+/**
+ * Suportes do tema.
+ */
+function rb_content_lab_setup() {
+	add_theme_support( 'title-tag' );
+	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'html5', array( 'search-form', 'gallery', 'caption', 'style', 'script', 'navigation-widgets' ) );
+	add_theme_support( 'custom-logo', array(
+		'height'      => 48,
+		'width'       => 200,
+		'flex-height' => true,
+		'flex-width'  => true,
+	) );
 
-		// Estilos do editor (aplica o style.css no editor de blocos).
-		add_editor_style( 'style.css' );
+	register_nav_menus( array(
+		'primary' => __( 'Menu principal', 'rb-content-lab' ),
+	) );
 
-		load_theme_textdomain( 'rb-content-lab', get_template_directory() . '/languages' );
-	}
+	load_theme_textdomain( 'rb-content-lab', get_template_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'rb_content_lab_setup' );
 
 /**
- * Enfileira a folha de estilo principal, com versão baseada no ficheiro para
- * cache-busting automático a cada deploy.
+ * Estilos e ativos.
  */
 function rb_content_lab_enqueue_assets() {
-	$style_path = get_template_directory() . '/style.css';
-	$version    = file_exists( $style_path ) ? (string) filemtime( $style_path ) : '1.0.0';
+	$dir = get_template_directory();
+	$uri = get_template_directory_uri();
 
-	wp_enqueue_style(
-		'rb-content-lab-style',
-		get_template_directory_uri() . '/style.css',
-		array(),
-		$version
-	);
+	// Folha global (tokens, base, utilitários).
+	$style_ver = file_exists( "$dir/style.css" ) ? (string) filemtime( "$dir/style.css" ) : RB_CONTENT_LAB_VERSION;
+	wp_enqueue_style( 'rb-content-lab', $uri . '/style.css', array(), $style_ver );
+
+	// CSS da landing — só quando o template está em uso (performance).
+	if ( is_page_template( 'page-templates/landing.php' ) ) {
+		$landing_ver = file_exists( "$dir/assets/css/landing.css" ) ? (string) filemtime( "$dir/assets/css/landing.css" ) : RB_CONTENT_LAB_VERSION;
+		wp_enqueue_style( 'rb-content-lab-landing', $uri . '/assets/css/landing.css', array( 'rb-content-lab' ), $landing_ver );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'rb_content_lab_enqueue_assets' );
 
 /**
- * Preload da fonte de display (Fraunces) — reduz o LCP em headings above-the-fold,
- * o que ajuda diretamente os Core Web Vitals e o SEO técnico.
+ * Preload da fonte de display (Fraunces) — reduz o LCP em headings
+ * above-the-fold, ajudando os Core Web Vitals e o SEO técnico.
  */
 function rb_content_lab_preload_fonts() {
-	$font = get_template_directory_uri() . '/assets/fonts/fraunces-variable-latin.woff2';
 	printf(
 		'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
-		esc_url( $font )
+		esc_url( get_template_directory_uri() . '/assets/fonts/fraunces-variable-latin.woff2' )
 	);
 }
 add_action( 'wp_head', 'rb_content_lab_preload_fonts', 1 );
 
 /**
- * Estilos de bloco personalizados (aparecem no seletor de estilos do editor).
- */
-function rb_content_lab_register_block_styles() {
-	register_block_style( 'core/button', array(
-		'name'  => 'outline',
-		'label' => __( 'Contorno', 'rb-content-lab' ),
-	) );
-
-	register_block_style( 'core/group', array(
-		'name'  => 'section',
-		'label' => __( 'Secção (ritmo vertical)', 'rb-content-lab' ),
-	) );
-
-	register_block_style( 'core/image', array(
-		'name'  => 'bleed',
-		'label' => __( 'Editorial (sombra)', 'rb-content-lab' ),
-	) );
-}
-add_action( 'init', 'rb_content_lab_register_block_styles' );
-
-/**
- * Categoria própria para os patterns da RB Content Lab, para os agrupar no
- * inseridor de blocos.
- */
-function rb_content_lab_register_pattern_category() {
-	if ( function_exists( 'register_block_pattern_category' ) ) {
-		register_block_pattern_category( 'rb-content-lab', array(
-			'label'       => __( 'RB Content Lab', 'rb-content-lab' ),
-			'description' => __( 'Secções de conversão da RB Content Lab.', 'rb-content-lab' ),
-		) );
-	}
-}
-add_action( 'init', 'rb_content_lab_register_pattern_category' );
-
-/**
- * Remove itens desnecessários do <head> para uma frente mais leve e limpa
- * (boa prática de performance/segurança). Ajustar conforme necessidade.
+ * Limpeza do <head> para uma frente mais leve e segura.
  */
 function rb_content_lab_clean_head() {
-	remove_action( 'wp_head', 'wp_generator' );          // Esconde a versão do WP.
-	remove_action( 'wp_head', 'wlwmanifest_link' );      // Windows Live Writer (obsoleto).
-	remove_action( 'wp_head', 'rsd_link' );              // Really Simple Discovery.
+	remove_action( 'wp_head', 'wp_generator' );
+	remove_action( 'wp_head', 'wlwmanifest_link' );
+	remove_action( 'wp_head', 'rsd_link' );
 }
 add_action( 'init', 'rb_content_lab_clean_head' );

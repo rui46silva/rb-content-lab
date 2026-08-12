@@ -3,70 +3,154 @@ Theme Name: RB Content Lab
 Theme URI: https://github.com/rui46silva/rb-content-lab
 Author: RB Content Lab
 Author URI: https://github.com/rui46silva
-Description: Block theme (Full Site Editing) da RB Content Lab — agência de comunicação e conteúdo premium. Direção de arte editorial, tipografia Fraunces + Hanken Grotesk auto-hospedada, design tokens em theme.json e patterns de conversão prontos a usar. Otimizado para performance (Lighthouse 90+), SEO e fácil manutenção.
-Requires at least: 6.5
+Description: Tema WordPress (PHP clássico) da RB Content Lab — agência de comunicação e conteúdo premium. Foco atual: landing page de captação "Direction over Noise", com template PHP e textos editáveis por página (ACF). Direção de arte editorial, tipografia Fraunces + Hanken Grotesk auto-hospedada e design tokens em theme.json. Otimizado para performance (Lighthouse 90+), SEO e fácil manutenção.
+Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Version: 1.0.0
+Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: rb-content-lab
-Tags: full-site-editing, block-patterns, custom-colors, custom-logo, editor-style, featured-images, threaded-comments, translation-ready, block-styles, wide-blocks
+Tags: custom-colors, custom-logo, editor-style, featured-images, translation-ready, block-styles, wide-blocks
 */
 
-/*
- * A maioria do estilo vive em theme.json (fonte única de verdade dos design tokens).
- * Este ficheiro cobre apenas o que o theme.json não expressa bem: utilitários
- * editoriais, estados de foco acessíveis e microdetalhes da direção de arte.
- */
+/* ===================================================================
+   FONTES AUTO-HOSPEDADAS
+   =================================================================== */
+@font-face {
+	font-family: "Fraunces";
+	src: url("assets/fonts/fraunces-variable-latin.woff2") format("woff2");
+	font-weight: 400 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Hanken Grotesk";
+	src: url("assets/fonts/hanken-grotesk-variable-latin.woff2") format("woff2");
+	font-weight: 400 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url("assets/fonts/jetbrains-mono-500-latin.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
 
-/* --- Acessibilidade: foco sempre visível (conta para Lighthouse) --- */
-:where(a, button, input, select, textarea, .wp-block-button__link):focus-visible {
-	outline: 2px solid var(--wp--preset--color--signature);
+/* ===================================================================
+   DESIGN TOKENS (autossuficientes — espelham o theme.json)
+   =================================================================== */
+:root {
+	--rb-ink: #1A1A40;
+	--rb-ink-soft: #2C2C5C;
+	--rb-ink-deep: #111130;
+	--rb-paper: #EFEEEC;
+	--rb-paper-2: #E5E3DE;
+	--rb-muted: #565676;
+	--rb-muted-2: #B7B7CC;
+	--rb-signature: #D85436;
+	--rb-signature-dark: #B8402A;
+	--rb-accent: #C9A55C;
+	--rb-white: #FFFFFF;
+
+	--rb-font-display: "Fraunces", Georgia, "Times New Roman", serif;
+	--rb-font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+	--rb-font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+	--rb-space-xs: 0.5rem;
+	--rb-space-sm: 1rem;
+	--rb-space-md: 2rem;
+	--rb-space-lg: 4rem;
+	--rb-space-xl: 6rem;
+	--rb-space-xxl: clamp(5rem, 3rem + 8vw, 9rem);
+
+	--rb-content: 1240px;
+	--rb-narrow: 820px;
+	--rb-radius: 4px;
+	--rb-shadow: 0 10px 40px -12px rgba(20, 17, 15, 0.25);
+	--rb-line: color-mix(in srgb, var(--rb-ink) 14%, transparent);
+}
+
+/* ===================================================================
+   BASE
+   =================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+	margin: 0;
+	font-family: var(--rb-font-body);
+	font-size: 1rem;
+	line-height: 1.65;
+	color: var(--rb-ink);
+	background: var(--rb-paper);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+img, svg, video { max-width: 100%; height: auto; display: block; }
+a { color: var(--rb-signature); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--rb-font-display);
+	font-weight: 500;
+	line-height: 1.08;
+	letter-spacing: -0.02em;
+	margin: 0 0 0.5em;
+}
+p { margin: 0 0 1rem; }
+
+/* Acessibilidade: foco sempre visível (conta para Lighthouse) */
+:where(a, button, input, select, textarea, summary, .rb-btn):focus-visible {
+	outline: 2px solid var(--rb-signature);
 	outline-offset: 3px;
 	border-radius: 2px;
 }
 
-/* --- Eyebrow / etiqueta editorial (usa a mono) --- */
+/* ===================================================================
+   LAYOUT & UTILITÁRIOS
+   =================================================================== */
+.rb-container { max-width: var(--rb-content); margin-inline: auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
+.rb-narrow { max-width: var(--rb-narrow); }
+.rb-measure { max-width: 65ch; }
+.rb-section { padding-block: var(--rb-space-xxl); }
+.rb-center { text-align: center; }
+
 .rb-eyebrow {
-	font-family: var(--wp--preset--font-family--mono);
-	font-size: var(--wp--preset--font-size--small);
+	font-family: var(--rb-font-mono);
+	font-size: 0.85rem;
 	font-weight: 500;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	color: var(--wp--preset--color--signature);
+	color: var(--rb-signature);
+	margin: 0;
 }
 
-/* --- Métrica gigante (números como elemento gráfico) --- */
-.rb-metric {
-	font-family: var(--wp--preset--font-family--display);
+/* Botões */
+.rb-btn {
+	display: inline-block;
+	font-family: var(--rb-font-body);
 	font-weight: 600;
-	line-height: 0.95;
-	letter-spacing: -0.03em;
-	font-size: clamp(3.5rem, 2rem + 7vw, 6rem);
+	font-size: 1rem;
+	letter-spacing: 0.01em;
+	padding: 1rem 2rem;
+	border-radius: var(--rb-radius);
+	border: 1.5px solid transparent;
+	cursor: pointer;
+	transition: background-color 0.2s ease, color 0.2s ease;
+	text-decoration: none;
 }
+.rb-btn:hover { text-decoration: none; }
+.rb-btn--primary { background: var(--rb-signature); color: var(--rb-paper); }
+.rb-btn--primary:hover { background: var(--rb-signature-dark); color: var(--rb-paper); }
+.rb-btn--ink { background: var(--rb-ink); color: var(--rb-paper); }
+.rb-btn--ink:hover { background: var(--rb-ink-deep); color: var(--rb-paper); }
+.rb-btn--ghost { background: transparent; border-color: currentColor; color: inherit; }
+.rb-btn--ghost:hover { background: var(--rb-ink); color: var(--rb-paper); border-color: var(--rb-ink); }
+/* Em fundos escuros, o ghost inverte para claro */
+.rb-on-dark .rb-btn--ghost:hover { background: var(--rb-paper); color: var(--rb-ink); border-color: var(--rb-paper); }
 
-/* --- Medida de leitura editorial (~65ch) para blocos de texto longo --- */
-.rb-measure { max-width: var(--wp--custom--content-narrow); }
-
-/* --- Botão secundário (outline) via block style --- */
-.wp-block-button.is-style-outline .wp-block-button__link {
-	background: transparent;
-	color: var(--wp--preset--color--ink);
-	border: 1.5px solid currentColor;
-}
-.wp-block-button.is-style-outline .wp-block-button__link:hover,
-.wp-block-button.is-style-outline .wp-block-button__link:focus {
-	background: var(--wp--preset--color--ink);
-	color: var(--wp--preset--color--paper);
-}
-/* Em fundos escuros, o outline herda o tom claro */
-.has-ink-background-color .wp-block-button.is-style-outline .wp-block-button__link,
-.has-accent-background-color .wp-block-button.is-style-outline .wp-block-button__link {
-	color: var(--wp--preset--color--paper);
-}
-
-/* --- Link "seta" com sublinhado animado --- */
+/* Link com seta e sublinhado animado */
 .rb-link-arrow {
 	font-weight: 600;
 	text-decoration: none;
@@ -76,99 +160,9 @@ Tags: full-site-editing, block-patterns, custom-colors, custom-logo, editor-styl
 	background-repeat: no-repeat;
 	transition: background-size 0.3s ease;
 }
-.rb-link-arrow:hover,
-.rb-link-arrow:focus { background-size: 100% 1.5px; }
+.rb-link-arrow:hover, .rb-link-arrow:focus { background-size: 100% 1.5px; text-decoration: none; }
 
-/* --- Barra de logótipos: monocromático discreto que ganha cor no hover --- */
-.rb-logos img {
-	filter: grayscale(1) opacity(0.55);
-	transition: filter 0.3s ease;
-}
-.rb-logos img:hover { filter: grayscale(0) opacity(1); }
-
-/* --- Cartão sobre fundo escuro --- */
-.has-ink-background-color .wp-block-column,
-.has-ink-soft-background-color { border-radius: 4px; }
-
-/* --- Ritmo de secção: garante respiração vertical consistente --- */
-.rb-section { padding-block: var(--wp--preset--spacing--xxl); }
-
-/* --- Imagem que "sangra" com leve elevação editorial --- */
-.rb-bleed img { box-shadow: var(--wp--custom--shadow); border-radius: 4px; }
-
-/* ===================================================================
-   LANDING PAGE — "Direction over noise"
-   =================================================================== */
-
-/* Statement tipográfico gigante (hero da landing) */
-.rb-statement {
-	font-family: var(--wp--preset--font-family--display);
-	font-weight: 500;
-	line-height: 0.98;
-	letter-spacing: -0.03em;
-	font-size: clamp(3rem, 1.6rem + 6.5vw, 6.5rem);
-}
-/* Palavra "ruído" riscada — o ruído é cortado, a direção fica */
-.rb-hero-statement s {
-	text-decoration-line: line-through;
-	text-decoration-thickness: 4px;
-	text-decoration-color: var(--wp--preset--color--signature);
-	color: var(--wp--preset--color--muted-2);
-}
-.rb-hero-statement mark {
-	background: transparent;
-	color: var(--wp--preset--color--signature);
-}
-
-/* Marcador vertical editorial (parágrafos de manifesto) */
-.rb-marker {
-	border-left: 3px solid var(--wp--preset--color--signature);
-	padding-left: 1.5rem;
-}
-
-/* Número de manifesto como elemento gráfico */
-.rb-index {
-	font-family: var(--wp--preset--font-family--mono);
-	font-size: 0.95rem;
-	letter-spacing: 0.1em;
-	color: var(--wp--preset--color--signature);
-}
-
-/* FAQ — accordion nativo (details/summary), sem JS, ótimo para SEO */
-.rb-faq details {
-	border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--ink) 14%, transparent);
-	padding: 1.4rem 0;
-}
-.rb-faq details:last-of-type { border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--ink) 14%, transparent); }
-.rb-faq summary {
-	cursor: pointer;
-	list-style: none;
-	display: flex;
-	justify-content: space-between;
-	gap: 1.5rem;
-	font-family: var(--wp--preset--font-family--display);
-	font-size: 1.3rem;
-	font-weight: 500;
-}
-.rb-faq summary::-webkit-details-marker { display: none; }
-.rb-faq summary::after { content: "+"; font-family: var(--wp--preset--font-family--mono); color: var(--wp--preset--color--signature); }
-.rb-faq details[open] summary { color: var(--wp--preset--color--signature); }
-.rb-faq details[open] summary::after { content: "\2013"; }
-.rb-faq details > *:not(summary) { margin-top: 0.75rem; max-width: 60ch; color: var(--wp--preset--color--muted); }
-
-/* Chip de garantia / selo */
-.rb-chip {
-	display: inline-block;
-	font-family: var(--wp--preset--font-family--mono);
-	font-size: 0.8rem;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	padding: 0.5rem 0.9rem;
-	border: 1px solid currentColor;
-	border-radius: 999px;
-}
-
-/* --- Reduz movimento para quem o pede --- */
+/* Reduz movimento para quem o pede */
 @media (prefers-reduced-motion: reduce) {
 	*, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }

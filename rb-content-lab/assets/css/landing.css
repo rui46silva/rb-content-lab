@@ -1,0 +1,107 @@
+/*
+ * Landing "Direction over Noise" — estilos da página de captação.
+ * Carregado apenas no template page-templates/landing.php.
+ */
+
+/* --- Secções e fundos --- */
+.rb-lp section { padding-block: var(--rb-space-xxl); }
+.rb-bg-ink { background: var(--rb-ink); color: var(--rb-paper); }
+.rb-bg-paper { background: var(--rb-paper); color: var(--rb-ink); }
+.rb-bg-paper-2 { background: var(--rb-paper-2); color: var(--rb-ink); }
+.rb-bg-signature { background: var(--rb-signature); color: var(--rb-paper); }
+.rb-bg-ink .rb-eyebrow { color: var(--rb-signature); }
+.rb-muted { color: var(--rb-muted); }
+.rb-bg-ink .rb-muted, .rb-muted-2 { color: var(--rb-muted-2); }
+
+/* --- Cabeçalho minimal da landing --- */
+.rb-lp-header { background: var(--rb-ink); color: var(--rb-paper); }
+.rb-lp-header .rb-container { display: flex; align-items: center; justify-content: space-between; padding-block: 1.1rem; }
+.rb-lp-brand { display: flex; align-items: center; gap: 0.6rem; font-family: var(--rb-font-display); font-weight: 600; font-size: 1.25rem; color: var(--rb-paper); text-decoration: none; }
+.rb-lp-brand img { width: 36px; height: auto; }
+.rb-lp-header .rb-btn { padding: 0.6rem 1.25rem; font-size: 0.95rem; }
+
+/* --- Hero --- */
+.rb-lp-hero { min-height: 88vh; display: flex; align-items: center; }
+.rb-statement {
+	font-family: var(--rb-font-display);
+	font-weight: 500;
+	line-height: 0.98;
+	letter-spacing: -0.03em;
+	font-size: clamp(3rem, 1.6rem + 6.5vw, 6.5rem);
+	margin: 2.5rem 0 2rem;
+}
+.rb-hero-statement s {
+	text-decoration-line: line-through;
+	text-decoration-thickness: 4px;
+	text-decoration-color: var(--rb-signature);
+	color: var(--rb-muted-2);
+}
+.rb-hero-statement mark { background: transparent; color: var(--rb-signature); }
+.rb-hero-sub { font-size: clamp(1.05rem, 1rem + 0.4vw, 1.25rem); color: var(--rb-muted-2); max-width: 52ch; }
+.rb-cta-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; }
+.rb-trust { margin-top: 1.75rem; font-size: 0.9rem; color: var(--rb-muted-2); letter-spacing: 0.02em; }
+
+/* --- Grelhas --- */
+.rb-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.rb-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+@media (max-width: 860px) {
+	.rb-grid-2, .rb-grid-3 { grid-template-columns: 1fr; gap: 2.5rem; }
+	.rb-lp-hero { min-height: 0; }
+}
+
+.rb-heading-lg { font-size: clamp(2rem, 1.4rem + 2.6vw, 2.75rem); margin-bottom: 1.25rem; }
+
+/* --- Manifesto --- */
+.rb-statement-md { font-family: var(--rb-font-display); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; font-size: clamp(2.25rem, 1.4rem + 3.6vw, 3.6rem); margin: 1.5rem 0 2.5rem; }
+.rb-marker { border-left: 3px solid var(--rb-signature); padding-left: 1.5rem; }
+.rb-marker p { font-size: 1.25rem; }
+.rb-index { font-family: var(--rb-font-mono); font-size: 0.9rem; letter-spacing: 0.1em; color: var(--rb-signature); margin-bottom: 0.5rem; }
+.rb-manifesto-closing { font-family: var(--rb-font-display); font-style: italic; font-weight: 500; font-size: 1.4rem; color: var(--rb-signature); margin-top: 3rem; }
+
+/* --- Prova / métricas --- */
+.rb-metric { font-family: var(--rb-font-display); font-weight: 600; line-height: 0.95; letter-spacing: -0.03em; font-size: clamp(3.25rem, 2rem + 6vw, 5.5rem); color: var(--rb-signature); margin: 0; }
+.rb-metric + p { color: var(--rb-muted-2); margin-top: 0.5rem; }
+.rb-hr { border: 0; border-top: 1px solid rgba(255,255,255,0.14); margin-block: var(--rb-space-lg); }
+.rb-quote { font-family: var(--rb-font-display); font-size: clamp(1.35rem, 1.1rem + 1vw, 1.7rem); line-height: 1.35; }
+.rb-quote-author { font-size: 0.9rem; color: var(--rb-muted-2); margin-top: 1rem; }
+.rb-chip { display: inline-block; font-family: var(--rb-font-mono); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.5rem 0.9rem; border: 1px solid var(--rb-signature); color: var(--rb-signature); border-radius: 999px; }
+.rb-proof-guarantee { display: grid; grid-template-columns: 1.6fr 1fr; gap: 3rem; align-items: center; }
+@media (max-width: 860px) { .rb-proof-guarantee { grid-template-columns: 1fr; gap: 2rem; } }
+
+/* --- Oferta + formulário --- */
+.rb-offer-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: start; }
+@media (max-width: 860px) { .rb-offer-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+.rb-list-arrows { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.rb-list-arrows li { padding: 0.35rem 0; }
+.rb-list-arrows li::before { content: "→ "; color: var(--rb-signature); font-weight: 700; }
+.rb-form-card { background: var(--rb-white); border-radius: 6px; padding: var(--rb-space-md); box-shadow: var(--rb-shadow); }
+.rb-form-card h3 { margin-top: 0; }
+/* Estilo defensivo para o form do Fluent Forms embebido */
+.rb-form-card input[type="text"], .rb-form-card input[type="email"], .rb-form-card input[type="url"],
+.rb-form-card select, .rb-form-card textarea {
+	width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--rb-line); border-radius: var(--rb-radius);
+	font-family: var(--rb-font-body); font-size: 1rem; background: var(--rb-paper); color: var(--rb-ink);
+}
+.rb-form-note { font-size: 0.85rem; color: var(--rb-muted); margin-top: 1rem; }
+
+/* --- FAQ (accordion nativo, sem JS) --- */
+.rb-faq details { border-top: 1px solid var(--rb-line); padding: 1.4rem 0; }
+.rb-faq details:last-of-type { border-bottom: 1px solid var(--rb-line); }
+.rb-faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1.5rem; font-family: var(--rb-font-display); font-size: 1.3rem; font-weight: 500; }
+.rb-faq summary::-webkit-details-marker { display: none; }
+.rb-faq summary::after { content: "+"; font-family: var(--rb-font-mono); color: var(--rb-signature); }
+.rb-faq details[open] summary { color: var(--rb-signature); }
+.rb-faq details[open] summary::after { content: "\2013"; }
+.rb-faq details > p { margin: 0.75rem 0 0; max-width: 60ch; color: var(--rb-muted); }
+
+/* --- CTA final --- */
+.rb-cta-final { text-align: center; }
+.rb-cta-final .rb-statement-md { margin: 0 auto 1.25rem; }
+.rb-cta-final p { max-width: 60ch; margin-inline: auto; }
+.rb-cta-final .rb-cta-row { justify-content: center; }
+
+/* --- Rodapé --- */
+.rb-lp-footer { background: var(--rb-ink); color: var(--rb-paper); padding-block: var(--rb-space-lg) var(--rb-space-md); }
+.rb-lp-footer .rb-container { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; }
+.rb-lp-footer p { margin: 0; color: var(--rb-muted-2); font-size: 0.9rem; }
+.rb-lp-footer a { color: var(--rb-muted-2); }

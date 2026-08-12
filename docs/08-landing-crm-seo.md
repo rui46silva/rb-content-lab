@@ -5,18 +5,21 @@
 
 ## 1. O que foi construído (no tema)
 
-Um template e um conjunto de patterns dedicados, separados do site institucional:
+Um **template PHP** dedicado, com textos editáveis por página (ACF), separado do site
+institucional. Todas as secções (hero, manifesto, prova, oferta+form, FAQ, CTA) vivem em
+`page-templates/landing.php`; os textos em `inc/landing-defaults.php` e editáveis via ACF.
 
 | Peça | Ficheiro | Papel |
 |------|----------|-------|
-| Template | `templates/page-landing.html` | Landing completa, sem navegação que distraia |
-| Cabeçalho minimal | `parts/header-landing.html` | Só logo + 1 CTA (reduz fugas de conversão) |
-| Hero | `patterns/landing-hero.php` | Statement "Menos ~~ruído~~. Mais direção." |
-| Manifesto | `patterns/landing-manifesto.php` | A tese — a própria escrita é a prova da craft |
-| Prova | `patterns/landing-proof.php` | Métricas + resultado assinado + **garantia** |
-| Oferta + Form | `patterns/landing-offer.php` | Diagnóstico gratuito + formulário |
-| FAQ | `patterns/landing-faq.php` | Objeções + **schema FAQPage** (rich results) |
-| CTA final | `patterns/landing-cta.php` | Fecho de conversão |
+| Template PHP | `page-templates/landing.php` | Landing completa (todas as secções) |
+| Cabeçalho minimal | `header-landing.php` | Só logo + 1 CTA (reduz fugas de conversão) |
+| Textos-base | `inc/landing-defaults.php` | Copy + helper `rb_landing_text()` |
+| Campos editáveis | `inc/landing-fields.php` | Campos ACF ligados ao template |
+| Estilos | `assets/css/landing.css` | Só carregado no template da landing |
+| Textos (doc) | [`09-landing-textos.md`](09-landing-textos.md) | Copy mapeado aos campos |
+
+> O **schema FAQPage** é gerado dinamicamente no template a partir dos campos da FAQ —
+> mantém-se sempre em sincronia com o que for editado.
 
 **Estratégia para "poucos clientes":** em vez de uma parede de logótipos que não temos,
 a prova assenta em (1) **resultados com número**, (2) o **método como autoridade**,
@@ -27,9 +30,9 @@ própria página é o melhor portefólio.
 ## 2. Publicar a landing (passos)
 
 1. **Páginas → Adicionar nova.** Título ex.: "Direction over Noise" (slug: `/direcao`).
-2. Na barra lateral, **Template → Landing (captação de leads)**.
-3. O template já traz todas as secções via patterns. Edite os `[placeholders]`
-   (nome/empresa nos testemunhos, métricas reais) no editor.
+2. **Atributos da página → Modelo → "Landing — Direction over Noise"**.
+3. Edite os textos no painel ACF **"Landing — Direction over Noise"** (separadores por
+   secção). Substitua os `[placeholders]` (métricas, testemunho) por dados reais.
 4. **Publicar.** Aponte os anúncios/CTAs para este URL.
 
 > Dica: mantenha a landing como página **isolada** (fora do menu). O tráfego pago e as
