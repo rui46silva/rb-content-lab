@@ -13,6 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Sem acesso direto.
 }
 
+// SEO — dados estruturados (JSON-LD).
+require_once get_template_directory() . '/inc/schema.php';
+
 if ( ! function_exists( 'rb_content_lab_setup' ) ) {
 	/**
 	 * Suportes do tema.
@@ -55,6 +58,19 @@ function rb_content_lab_enqueue_assets() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'rb_content_lab_enqueue_assets' );
+
+/**
+ * Preload da fonte de display (Fraunces) — reduz o LCP em headings above-the-fold,
+ * o que ajuda diretamente os Core Web Vitals e o SEO técnico.
+ */
+function rb_content_lab_preload_fonts() {
+	$font = get_template_directory_uri() . '/assets/fonts/fraunces-variable-latin.woff2';
+	printf(
+		'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
+		esc_url( $font )
+	);
+}
+add_action( 'wp_head', 'rb_content_lab_preload_fonts', 1 );
 
 /**
  * Estilos de bloco personalizados (aparecem no seletor de estilos do editor).

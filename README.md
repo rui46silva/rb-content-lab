@@ -21,6 +21,7 @@ Vá do "porquê" (estratégia) ao "como" (implementação).
 | 05 | [Stack Técnico WordPress](docs/05-wordpress-tech-stack.md) | Tema, builder, plugins, hosting e segurança |
 | 06 | [SEO & Performance (Lighthouse 90+)](docs/06-seo-performance.md) | On-page, técnico, Core Web Vitals |
 | 07 | [Roadmap de Implementação](docs/07-roadmap-implementacao.md) | Sprints, checklist de lançamento e pós-lançamento |
+| 08 | [Landing "Direction over Noise": CRM, SEO & Lançamento](docs/08-landing-crm-seo.md) | Landing de captação, FluentCRM, formulário e SEO |
 
 ## Princípios não-negociáveis
 

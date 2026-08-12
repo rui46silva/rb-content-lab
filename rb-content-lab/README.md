@@ -34,14 +34,18 @@ manutenção — sem page builders externos, sem lock-in.
 rb-content-lab/
 ├── style.css              Cabeçalho do tema + utilitários editoriais e foco acessível
 ├── theme.json             Design tokens: cor, tipografia, espaçamento, estilos (v2)
-├── functions.php          Supports, enqueue, block styles, categorias de patterns
+├── functions.php          Supports, enqueue, preload de fonte, block styles, patterns
+├── inc/
+│   └── schema.php         SEO — JSON-LD (Organization + WebSite + ProfessionalService)
 ├── screenshot.png         Pré-visualização (1200×900)
 ├── assets/fonts/          Fraunces + Hanken Grotesk + JetBrains Mono (woff2, OFL)
 ├── parts/
 │   ├── header.html        Cabeçalho sticky com navegação + CTA
+│   ├── header-landing.html Cabeçalho minimal (só logo + 1 CTA) para a landing
 │   └── footer.html        Rodapé de 4 colunas com newsletter e legais
 ├── templates/
 │   ├── front-page.html    Homepage — compõe os patterns de conversão
+│   ├── page-landing.html  Landing de captação "Direction over noise"
 │   ├── index.html         Fallback / listagem
 │   ├── page.html          Página com título
 │   ├── page-no-title.html Página sem título (landing pages)
@@ -49,17 +53,29 @@ rb-content-lab/
 │   ├── archive.html       Arquivo de categoria/tag
 │   ├── search.html        Resultados de pesquisa
 │   └── 404.html           Erro 404 útil (com CTA e pesquisa)
-└── patterns/              Secções da homepage (categoria "RB Content Lab")
-    ├── hero.php
-    ├── logos.php
-    ├── problem-pas.php
-    ├── services.php
-    ├── featured-case.php
-    ├── method.php
-    ├── testimonials.php
-    ├── about-short.php
-    └── cta-final.php
+└── patterns/              Secções (categoria "RB Content Lab")
+    ├── hero.php · logos.php · problem-pas.php · services.php
+    ├── featured-case.php · method.php · testimonials.php
+    ├── about-short.php · cta-final.php          (homepage)
+    └── landing-hero.php · landing-manifesto.php · landing-proof.php
+        landing-offer.php · landing-faq.php · landing-cta.php   (landing)
 ```
+
+## Landing de captação "Direction over Noise"
+
+Template dedicado (`page-landing`) para atrair novos clientes, com cabeçalho minimal
+(reduz fugas), manifesto artístico, prova de valor com garantia, formulário de
+diagnóstico e FAQ com schema. Setup de CRM (FluentCRM), formulário e SEO documentado em
+[`docs/08-landing-crm-seo.md`](../docs/08-landing-crm-seo.md).
+
+Publicar: **Páginas → Adicionar nova → Template: "Landing (captação de leads)"**.
+
+## SEO integrado
+
+- **JSON-LD** (`inc/schema.php`): Organization + WebSite + ProfessionalService no `<head>`,
+  com guarda anti-duplicação se Rank Math/Yoast estiver ativo.
+- **FAQPage schema** no pattern `landing-faq` → elegível para rich results.
+- **Preload** da fonte de display → melhora o LCP (Core Web Vitals).
 
 ## Design tokens (resumo)
 

@@ -96,6 +96,78 @@ Tags: full-site-editing, block-patterns, custom-colors, custom-logo, editor-styl
 /* --- Imagem que "sangra" com leve elevação editorial --- */
 .rb-bleed img { box-shadow: var(--wp--custom--shadow); border-radius: 4px; }
 
+/* ===================================================================
+   LANDING PAGE — "Direction over noise"
+   =================================================================== */
+
+/* Statement tipográfico gigante (hero da landing) */
+.rb-statement {
+	font-family: var(--wp--preset--font-family--display);
+	font-weight: 500;
+	line-height: 0.98;
+	letter-spacing: -0.03em;
+	font-size: clamp(3rem, 1.6rem + 6.5vw, 6.5rem);
+}
+/* Palavra "ruído" riscada — o ruído é cortado, a direção fica */
+.rb-hero-statement s {
+	text-decoration-line: line-through;
+	text-decoration-thickness: 4px;
+	text-decoration-color: var(--wp--preset--color--signature);
+	color: var(--wp--preset--color--muted-2);
+}
+.rb-hero-statement mark {
+	background: transparent;
+	color: var(--wp--preset--color--signature);
+}
+
+/* Marcador vertical editorial (parágrafos de manifesto) */
+.rb-marker {
+	border-left: 3px solid var(--wp--preset--color--signature);
+	padding-left: 1.5rem;
+}
+
+/* Número de manifesto como elemento gráfico */
+.rb-index {
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: 0.95rem;
+	letter-spacing: 0.1em;
+	color: var(--wp--preset--color--signature);
+}
+
+/* FAQ — accordion nativo (details/summary), sem JS, ótimo para SEO */
+.rb-faq details {
+	border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--ink) 14%, transparent);
+	padding: 1.4rem 0;
+}
+.rb-faq details:last-of-type { border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--ink) 14%, transparent); }
+.rb-faq summary {
+	cursor: pointer;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	gap: 1.5rem;
+	font-family: var(--wp--preset--font-family--display);
+	font-size: 1.3rem;
+	font-weight: 500;
+}
+.rb-faq summary::-webkit-details-marker { display: none; }
+.rb-faq summary::after { content: "+"; font-family: var(--wp--preset--font-family--mono); color: var(--wp--preset--color--signature); }
+.rb-faq details[open] summary { color: var(--wp--preset--color--signature); }
+.rb-faq details[open] summary::after { content: "\2013"; }
+.rb-faq details > *:not(summary) { margin-top: 0.75rem; max-width: 60ch; color: var(--wp--preset--color--muted); }
+
+/* Chip de garantia / selo */
+.rb-chip {
+	display: inline-block;
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: 0.8rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	padding: 0.5rem 0.9rem;
+	border: 1px solid currentColor;
+	border-radius: 999px;
+}
+
 /* --- Reduz movimento para quem o pede --- */
 @media (prefers-reduced-motion: reduce) {
 	*, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
