@@ -1,0 +1,102 @@
+/*
+Theme Name: RB Content Lab
+Theme URI: https://github.com/rui46silva/rb-content-lab
+Author: RB Content Lab
+Author URI: https://github.com/rui46silva
+Description: Block theme (Full Site Editing) da RB Content Lab — agência de comunicação e conteúdo premium. Direção de arte editorial, tipografia Fraunces + Hanken Grotesk auto-hospedada, design tokens em theme.json e patterns de conversão prontos a usar. Otimizado para performance (Lighthouse 90+), SEO e fácil manutenção.
+Requires at least: 6.5
+Tested up to: 6.7
+Requires PHP: 8.0
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: rb-content-lab
+Tags: full-site-editing, block-patterns, custom-colors, custom-logo, editor-style, featured-images, threaded-comments, translation-ready, block-styles, wide-blocks
+*/
+
+/*
+ * A maioria do estilo vive em theme.json (fonte única de verdade dos design tokens).
+ * Este ficheiro cobre apenas o que o theme.json não expressa bem: utilitários
+ * editoriais, estados de foco acessíveis e microdetalhes da direção de arte.
+ */
+
+/* --- Acessibilidade: foco sempre visível (conta para Lighthouse) --- */
+:where(a, button, input, select, textarea, .wp-block-button__link):focus-visible {
+	outline: 2px solid var(--wp--preset--color--accent);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
+/* --- Eyebrow / etiqueta editorial (usa a mono) --- */
+.rb-eyebrow {
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--wp--preset--color--signature);
+}
+
+/* --- Métrica gigante (números como elemento gráfico) --- */
+.rb-metric {
+	font-family: var(--wp--preset--font-family--display);
+	font-weight: 600;
+	line-height: 0.95;
+	letter-spacing: -0.03em;
+	font-size: clamp(3.5rem, 2rem + 7vw, 6rem);
+}
+
+/* --- Medida de leitura editorial (~65ch) para blocos de texto longo --- */
+.rb-measure { max-width: var(--wp--custom--content-narrow); }
+
+/* --- Botão secundário (outline) via block style --- */
+.wp-block-button.is-style-outline .wp-block-button__link {
+	background: transparent;
+	color: var(--wp--preset--color--ink);
+	border: 1.5px solid currentColor;
+}
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.wp-block-button.is-style-outline .wp-block-button__link:focus {
+	background: var(--wp--preset--color--ink);
+	color: var(--wp--preset--color--paper);
+}
+/* Em fundos escuros, o outline herda o tom claro */
+.has-ink-background-color .wp-block-button.is-style-outline .wp-block-button__link,
+.has-accent-background-color .wp-block-button.is-style-outline .wp-block-button__link {
+	color: var(--wp--preset--color--paper);
+}
+
+/* --- Link "seta" com sublinhado animado --- */
+.rb-link-arrow {
+	font-weight: 600;
+	text-decoration: none;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-size: 0% 1.5px;
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	transition: background-size 0.3s ease;
+}
+.rb-link-arrow:hover,
+.rb-link-arrow:focus { background-size: 100% 1.5px; }
+
+/* --- Barra de logótipos: monocromático discreto que ganha cor no hover --- */
+.rb-logos img {
+	filter: grayscale(1) opacity(0.55);
+	transition: filter 0.3s ease;
+}
+.rb-logos img:hover { filter: grayscale(0) opacity(1); }
+
+/* --- Cartão sobre fundo escuro --- */
+.has-ink-background-color .wp-block-column,
+.has-ink-soft-background-color { border-radius: 4px; }
+
+/* --- Ritmo de secção: garante respiração vertical consistente --- */
+.rb-section { padding-block: var(--wp--preset--spacing--xxl); }
+
+/* --- Imagem que "sangra" com leve elevação editorial --- */
+.rb-bleed img { box-shadow: var(--wp--custom--shadow); border-radius: 4px; }
+
+/* --- Reduz movimento para quem o pede --- */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
