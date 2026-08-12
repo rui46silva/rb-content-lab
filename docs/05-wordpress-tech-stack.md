@@ -37,8 +37,8 @@ disciplinar o uso para não degradar o Lighthouse.
       "palette": [
         { "slug": "ink",       "color": "#1A1A40", "name": "Ink (Navy)" },
         { "slug": "paper",     "color": "#EFEEEC", "name": "Paper" },
-        { "slug": "signature", "color": "#D85436", "name": "Signature (Coral)" },
-        { "slug": "accent",    "color": "#C9A55C", "name": "Accent (Gold)" }
+        { "slug": "signature", "color": "#C8A24A", "name": "Signature (Gold)" },
+        { "slug": "accent",    "color": "#C8A24A", "name": "Accent (Gold)" }
       ]
     },
     "typography": {

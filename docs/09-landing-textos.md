@@ -25,7 +25,7 @@
 ## Hero
 | Campo | Texto |
 |-------|-------|
-| `hero_eyebrow` | Estúdio editorial · Direction over noise |
+| `hero_eyebrow` | Agência de comunicação · Direction over noise |
 | `hero_word_1` | Menos |
 | `hero_word_strike` | ruído *(aparece riscado)* |
 | `hero_word_2` | Mais |

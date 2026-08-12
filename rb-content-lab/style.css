@@ -50,9 +50,10 @@ Tags: custom-colors, custom-logo, editor-style, featured-images, translation-rea
 	--rb-paper-2: #E5E3DE;
 	--rb-muted: #565676;
 	--rb-muted-2: #B7B7CC;
-	--rb-signature: #D85436;
-	--rb-signature-dark: #B8402A;
-	--rb-accent: #C9A55C;
+	--rb-signature: #C8A24A;
+	--rb-signature-dark: #A9822F;
+	--rb-signature-light: #E4C77E;
+	--rb-accent: #C8A24A;
 	--rb-white: #FFFFFF;
 
 	--rb-font-display: "Fraunces", Georgia, "Times New Roman", serif;
@@ -102,7 +103,7 @@ p { margin: 0 0 1rem; }
 
 /* Acessibilidade: foco sempre visível (conta para Lighthouse) */
 :where(a, button, input, select, textarea, summary, .rb-btn):focus-visible {
-	outline: 2px solid var(--rb-signature);
+	outline: 2px solid var(--rb-signature-dark);
 	outline-offset: 3px;
 	border-radius: 2px;
 }
@@ -122,9 +123,23 @@ p { margin: 0 0 1rem; }
 	font-weight: 500;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	color: var(--rb-signature);
+	color: var(--rb-ink);
 	margin: 0;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6em;
 }
+/* Marcador dourado (mantém a marca sem sacrificar contraste do texto) */
+.rb-eyebrow::before {
+	content: "";
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 2px;
+	background: var(--rb-signature);
+	transform: rotate(45deg);
+	flex: none;
+}
+.rb-on-dark .rb-eyebrow { color: var(--rb-paper); }
 
 /* Botões */
 .rb-btn {
@@ -137,12 +152,13 @@ p { margin: 0 0 1rem; }
 	border-radius: var(--rb-radius);
 	border: 1.5px solid transparent;
 	cursor: pointer;
-	transition: background-color 0.2s ease, color 0.2s ease;
+	transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 	text-decoration: none;
+	will-change: transform;
 }
-.rb-btn:hover { text-decoration: none; }
-.rb-btn--primary { background: var(--rb-signature); color: var(--rb-paper); }
-.rb-btn--primary:hover { background: var(--rb-signature-dark); color: var(--rb-paper); }
+.rb-btn:hover { text-decoration: none; transform: translateY(-2px); }
+.rb-btn--primary { background: var(--rb-signature); color: var(--rb-ink); }
+.rb-btn--primary:hover { background: var(--rb-signature-light); color: var(--rb-ink); box-shadow: 0 12px 30px -10px rgba(200, 162, 74, 0.6); }
 .rb-btn--ink { background: var(--rb-ink); color: var(--rb-paper); }
 .rb-btn--ink:hover { background: var(--rb-ink-deep); color: var(--rb-paper); }
 .rb-btn--ghost { background: transparent; border-color: currentColor; color: inherit; }

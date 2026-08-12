@@ -57,10 +57,13 @@ function rb_content_lab_enqueue_assets() {
 	$style_ver = file_exists( "$dir/style.css" ) ? (string) filemtime( "$dir/style.css" ) : RB_CONTENT_LAB_VERSION;
 	wp_enqueue_style( 'rb-content-lab', $uri . '/style.css', array(), $style_ver );
 
-	// CSS da landing — só quando o template está em uso (performance).
+	// CSS + JS da landing — só quando o template está em uso (performance).
 	if ( is_page_template( 'page-templates/landing.php' ) ) {
 		$landing_ver = file_exists( "$dir/assets/css/landing.css" ) ? (string) filemtime( "$dir/assets/css/landing.css" ) : RB_CONTENT_LAB_VERSION;
 		wp_enqueue_style( 'rb-content-lab-landing', $uri . '/assets/css/landing.css', array( 'rb-content-lab' ), $landing_ver );
+
+		$js_ver = file_exists( "$dir/assets/js/landing.js" ) ? (string) filemtime( "$dir/assets/js/landing.js" ) : RB_CONTENT_LAB_VERSION;
+		wp_enqueue_script( 'rb-content-lab-landing', $uri . '/assets/js/landing.js', array(), $js_ver, array( 'strategy' => 'defer', 'in_footer' => true ) );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rb_content_lab_enqueue_assets' );

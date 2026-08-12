@@ -73,10 +73,14 @@ Definidos em `style.css` como variáveis `--rb-*` (autossuficientes) e espelhado
 | `--rb-ink` | `#1A1A40` | Navy (fundos escuros, texto) |
 | `--rb-paper` / `--rb-paper-2` | `#EFEEEC` / `#E5E3DE` | Off-white e variante |
 | `--rb-muted` / `--rb-muted-2` | `#565676` / `#B7B7CC` | Texto secundário (claro / escuro) |
-| `--rb-signature` | `#D85436` | Coral — CTAs, destaques, foco |
-| `--rb-accent` | `#C9A55C` | Dourado — detalhe editorial |
+| `--rb-signature` | `#C8A24A` | Dourado — CTAs, destaques, detalhe |
+| `--rb-signature-light` | `#E4C77E` | Dourado claro — gradientes, glow, hover |
 
 Tipografia: **Fraunces** (display), **Hanken Grotesk** (corpo), **JetBrains Mono** (detalhe).
+
+Animações (só na landing, `assets/js/landing.js`): reveal no scroll com stagger,
+contadores das métricas, risco do hero a desenhar-se e marquee cinético — tudo com
+guarda `prefers-reduced-motion`.
 
 ## SEO integrado
 

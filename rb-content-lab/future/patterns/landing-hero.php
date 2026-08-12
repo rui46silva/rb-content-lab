@@ -9,7 +9,7 @@
 <!-- wp:group {"tagName":"section","className":"rb-section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xxl"}},"dimensions":{"minHeight":"88vh"}},"backgroundColor":"ink","textColor":"paper","layout":{"type":"constrained"}} -->
 <section class="wp-block-group rb-section alignfull has-paper-color has-ink-background-color has-text-color has-background" style="min-height:88vh;padding-top:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--xxl)">
 	<!-- wp:paragraph {"className":"rb-eyebrow"} -->
-	<p class="rb-eyebrow">Estúdio editorial · Direction over noise</p>
+	<p class="rb-eyebrow">Agência de comunicação · Direction over noise</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:heading {"level":1,"className":"rb-statement rb-hero-statement","style":{"spacing":{"margin":{"top":"2.5rem","bottom":"2rem"}}}} -->

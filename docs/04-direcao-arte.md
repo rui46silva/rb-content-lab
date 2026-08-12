@@ -58,15 +58,20 @@ Secundária        #EFEEEC  off-white quente, base clara — "paper"
   ↳ paper alt     #E5E3DE  secções alternadas
 Neutro (claro)    #565676  texto secundário sobre fundo claro
 Neutro (escuro)   #B7B7CC  texto secundário sobre navy (contraste AA)
-Assinatura        #D85436  coral quente — CTAs, destaques, energia
-Acento            #C9A55C  dourado suave — detalhe editorial premium
+Assinatura        #C8A24A  dourado — CTAs, destaques, detalhe premium
+  ↳ dourado claro #E4C77E  gradientes, glow, hover
+  ↳ dourado escuro#A9822F  texto/detalhe dourado sobre fundo claro (contraste)
 ```
 
-Navy + off-white dão a base sóbria e premium; o **coral** é a cor de conversão (pop nos
-CTAs contra o navy frio) e o **dourado** o toque editorial de luxo.
+Navy + off-white dão a base sóbria e premium; o **dourado** é simultaneamente a cor de
+conversão (CTAs) e o toque de luxo editorial — mais sofisticado e diferenciador do que o
+laranja.
 
-- **Regra 60/30/10:** 60% base (navy/off-white), 30% secundário, 10% acentos (coral nos
-  CTAs, dourado em detalhes). Os acentos nunca se diluem — são o que se memoriza.
+- **Regra 60/30/10:** 60% base (navy/off-white), 30% secundário, 10% dourado (CTAs e
+  detalhes). O dourado nunca se dilui — é o que se memoriza.
+- **Nota de contraste:** o dourado tem pouco contraste sobre o creme, por isso usa-se em
+  fundos escuros, preenchimentos (botões) e detalhes; o texto em secções claras fica em
+  navy, com o dourado como marcador/gradiente.
 - Garantir **contraste AA/AAA** (ver doc 06 — acessibilidade conta para Lighthouse).
 - Definir tokens (ver secção 7) — nunca hex soltos espalhados pelo CSS.
 
@@ -100,8 +105,9 @@ Definir como CSS custom properties / variáveis do tema para consistência e man
   --color-paper-2:    #E5E3DE;
   --color-muted:      #565676;  /* texto secundário (claro) */
   --color-muted-2:    #B7B7CC;  /* texto secundário (sobre navy) */
-  --color-signature:  #D85436;  /* coral — CTAs */
-  --color-accent:     #C9A55C;  /* dourado — detalhe */
+  --color-signature:  #C8A24A;  /* dourado — CTAs, destaques */
+  --color-signature-light: #E4C77E;  /* dourado claro — gradientes/glow */
+  --color-accent:     #C8A24A;  /* dourado */
 
   /* Tipografia */
   --font-display: "Fraunces", Georgia, serif;

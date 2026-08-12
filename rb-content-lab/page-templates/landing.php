@@ -31,59 +31,70 @@ get_header( 'landing' );
 	<!-- HERO -->
 	<section class="rb-lp-hero rb-bg-ink rb-on-dark">
 		<div class="rb-container">
-			<p class="rb-eyebrow"><?php echo esc_html( rb_lp( 'hero_eyebrow' ) ); ?></p>
-			<h1 class="rb-statement rb-hero-statement">
+			<p class="rb-eyebrow" data-reveal><?php echo esc_html( rb_lp( 'hero_eyebrow' ) ); ?></p>
+			<h1 class="rb-statement rb-hero-statement" data-reveal>
 				<?php echo esc_html( rb_lp( 'hero_word_1' ) ); ?> <s><?php echo esc_html( rb_lp( 'hero_word_strike' ) ); ?></s>.<br>
 				<?php echo esc_html( rb_lp( 'hero_word_2' ) ); ?> <mark><?php echo esc_html( rb_lp( 'hero_word_highlight' ) ); ?></mark>.
 			</h1>
-			<p class="rb-hero-sub rb-measure"><?php echo esc_html( rb_lp( 'hero_sub' ) ); ?></p>
-			<div class="rb-cta-row">
+			<p class="rb-hero-sub rb-measure" data-reveal><?php echo esc_html( rb_lp( 'hero_sub' ) ); ?></p>
+			<div class="rb-cta-row" data-reveal>
 				<a class="rb-btn rb-btn--primary" href="<?php echo esc_url( rb_lp( 'hero_cta1_url' ) ); ?>"><?php echo esc_html( rb_lp( 'hero_cta1_label' ) ); ?></a>
 				<a class="rb-btn rb-btn--ghost" href="<?php echo esc_url( rb_lp( 'hero_cta2_url' ) ); ?>"><?php echo esc_html( rb_lp( 'hero_cta2_label' ) ); ?></a>
 			</div>
-			<p class="rb-trust"><?php echo esc_html( rb_lp( 'hero_trust' ) ); ?></p>
+			<p class="rb-trust" data-reveal><?php echo esc_html( rb_lp( 'hero_trust' ) ); ?></p>
 		</div>
 	</section>
+
+	<!-- MARQUEE — dispositivo cinético "Direction over noise" -->
+	<div class="rb-marquee" aria-hidden="true">
+		<div class="rb-marquee__track">
+			<?php
+			$rb_marquee = '<span>Direction over noise <b>&#9670;</b> Comunicação com direção <b>&#9670;</b> Menos ruído, mais autoridade <b>&#9670;</b> </span>';
+			echo $rb_marquee . $rb_marquee; // Duplicado para loop contínuo. phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			?>
+		</div>
+	</div>
 
 	<!-- MANIFESTO -->
 	<section id="manifesto" class="rb-bg-paper">
 		<div class="rb-container rb-narrow">
 			<p class="rb-eyebrow"><?php echo esc_html( rb_lp( 'man_eyebrow' ) ); ?></p>
-			<h2 class="rb-statement-md"><?php echo esc_html( rb_lp( 'man_heading' ) ); ?></h2>
+			<h2 class="rb-statement-md" data-reveal><?php echo esc_html( rb_lp( 'man_heading' ) ); ?></h2>
 			<div class="rb-grid-2">
-				<div class="rb-marker">
+				<div class="rb-marker" data-reveal>
 					<p class="rb-index"><?php echo esc_html( rb_lp( 'man_1_index' ) ); ?></p>
 					<p><?php echo esc_html( rb_lp( 'man_1_text' ) ); ?></p>
 				</div>
-				<div class="rb-marker">
+				<div class="rb-marker" data-reveal>
 					<p class="rb-index"><?php echo esc_html( rb_lp( 'man_2_index' ) ); ?></p>
 					<p><?php echo esc_html( rb_lp( 'man_2_text' ) ); ?></p>
 				</div>
 			</div>
-			<p class="rb-manifesto-closing"><?php echo esc_html( rb_lp( 'man_closing' ) ); ?></p>
+			<p class="rb-manifesto-closing" data-reveal><?php echo esc_html( rb_lp( 'man_closing' ) ); ?></p>
 		</div>
 	</section>
 
 	<!-- PROVA -->
 	<section class="rb-bg-ink rb-on-dark">
 		<div class="rb-container">
-			<p class="rb-eyebrow"><?php echo esc_html( rb_lp( 'proof_eyebrow' ) ); ?></p>
-			<h2 class="rb-heading-lg"><?php echo esc_html( rb_lp( 'proof_heading' ) ); ?></h2>
+			<p class="rb-eyebrow" data-reveal><?php echo esc_html( rb_lp( 'proof_eyebrow' ) ); ?></p>
+			<h2 class="rb-heading-lg" data-reveal><?php echo esc_html( rb_lp( 'proof_heading' ) ); ?></h2>
 			<div class="rb-grid-3">
 				<?php for ( $i = 1; $i <= 3; $i++ ) : ?>
-					<div>
-						<p class="rb-metric"><?php echo esc_html( rb_lp( "proof_m{$i}_value" ) ); ?></p>
+					<?php $rb_metric = rb_lp( "proof_m{$i}_value" ); ?>
+					<div data-reveal>
+						<p class="rb-metric" data-count="<?php echo esc_attr( $rb_metric ); ?>"><?php echo esc_html( $rb_metric ); ?></p>
 						<p><?php echo esc_html( rb_lp( "proof_m{$i}_label" ) ); ?></p>
 					</div>
 				<?php endfor; ?>
 			</div>
 			<hr class="rb-hr">
 			<div class="rb-proof-guarantee">
-				<div>
+				<div data-reveal>
 					<p class="rb-quote"><?php echo esc_html( rb_lp( 'proof_quote' ) ); ?></p>
 					<p class="rb-quote-author"><?php echo esc_html( rb_lp( 'proof_quote_author' ) ); ?></p>
 				</div>
-				<div>
+				<div data-reveal>
 					<span class="rb-chip"><?php echo esc_html( rb_lp( 'proof_chip' ) ); ?></span>
 					<p class="rb-muted" style="margin-top:1rem;"><?php echo esc_html( rb_lp( 'proof_guarantee' ) ); ?></p>
 				</div>
@@ -95,7 +106,7 @@ get_header( 'landing' );
 	<section id="diagnostico" class="rb-bg-paper-2">
 		<div class="rb-container">
 			<div class="rb-offer-grid">
-				<div>
+				<div data-reveal>
 					<p class="rb-eyebrow"><?php echo esc_html( rb_lp( 'offer_eyebrow' ) ); ?></p>
 					<h2 class="rb-heading-lg"><?php echo esc_html( rb_lp( 'offer_heading' ) ); ?></h2>
 					<p class="rb-muted" style="font-size:1.15rem;"><?php echo esc_html( rb_lp( 'offer_intro' ) ); ?></p>
@@ -106,7 +117,7 @@ get_header( 'landing' );
 					</ul>
 					<p class="rb-muted" style="margin-top:1.5rem;"><?php echo esc_html( rb_lp( 'offer_next' ) ); ?></p>
 				</div>
-				<div class="rb-form-card">
+				<div class="rb-form-card" data-reveal>
 					<h3><?php echo esc_html( rb_lp( 'offer_form_title' ) ); ?></h3>
 					<?php
 					// Formulário Fluent Forms (ligado ao FluentCRM). Renderiza se o plugin estiver ativo.
@@ -124,10 +135,10 @@ get_header( 'landing' );
 	<!-- FAQ -->
 	<section class="rb-bg-paper">
 		<div class="rb-container rb-narrow rb-faq">
-			<p class="rb-eyebrow"><?php echo esc_html( rb_lp( 'faq_eyebrow' ) ); ?></p>
-			<h2 class="rb-heading-lg"><?php echo esc_html( rb_lp( 'faq_heading' ) ); ?></h2>
+			<p class="rb-eyebrow" data-reveal><?php echo esc_html( rb_lp( 'faq_eyebrow' ) ); ?></p>
+			<h2 class="rb-heading-lg" data-reveal><?php echo esc_html( rb_lp( 'faq_heading' ) ); ?></h2>
 			<?php for ( $i = 1; $i <= 5; $i++ ) : ?>
-				<details<?php echo ( 1 === $i ) ? ' open' : ''; ?>>
+				<details data-reveal<?php echo ( 1 === $i ) ? ' open' : ''; ?>>
 					<summary><?php echo esc_html( rb_lp( "faq_{$i}_q" ) ); ?></summary>
 					<p><?php echo esc_html( rb_lp( "faq_{$i}_a" ) ); ?></p>
 				</details>
@@ -136,11 +147,11 @@ get_header( 'landing' );
 	</section>
 
 	<!-- CTA FINAL -->
-	<section class="rb-bg-signature rb-on-dark rb-cta-final">
+	<section class="rb-bg-signature rb-cta-final">
 		<div class="rb-container rb-narrow">
-			<h2 class="rb-statement-md"><?php echo esc_html( rb_lp( 'cta_heading' ) ); ?></h2>
-			<p style="font-size:1.15rem;"><?php echo esc_html( rb_lp( 'cta_sub' ) ); ?></p>
-			<div class="rb-cta-row">
+			<h2 class="rb-statement-md" data-reveal><?php echo esc_html( rb_lp( 'cta_heading' ) ); ?></h2>
+			<p style="font-size:1.15rem;" data-reveal><?php echo esc_html( rb_lp( 'cta_sub' ) ); ?></p>
+			<div class="rb-cta-row" data-reveal>
 				<a class="rb-btn rb-btn--ink" href="<?php echo esc_url( rb_lp( 'cta_button_url' ) ); ?>"><?php echo esc_html( rb_lp( 'cta_button_label' ) ); ?></a>
 			</div>
 		</div>
