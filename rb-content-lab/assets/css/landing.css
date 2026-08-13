@@ -87,6 +87,28 @@
 
 .rb-heading-lg { font-size: clamp(2rem, 1.4rem + 2.6vw, 2.75rem); margin-bottom: 1.25rem; }
 
+/* --- Setores / credibilidade --- */
+.rb-sectors-list { list-style: none; padding: 0; margin: 2rem 0 0; display: flex; flex-wrap: wrap; gap: 1rem 3rem; }
+.rb-sectors-list li {
+	font-family: var(--rb-font-display);
+	font-weight: 500;
+	font-size: clamp(1.5rem, 1rem + 2vw, 2.4rem);
+	letter-spacing: -0.01em;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.rb-sectors-list li::before { content: ""; width: 0.6rem; height: 0.6rem; background: var(--rb-signature); transform: rotate(45deg); flex: none; }
+
+/* --- Método (passos) --- */
+.rb-method-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem; margin-top: 1rem; }
+@media (max-width: 900px) { .rb-method-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+@media (max-width: 560px) { .rb-method-grid { grid-template-columns: 1fr; } }
+.rb-step { border-top: 2px solid var(--rb-line); padding-top: 1.25rem; }
+.rb-step__n { font-family: var(--rb-font-mono); color: var(--rb-signature-dark); font-size: 0.9rem; letter-spacing: 0.1em; margin: 0 0 0.5rem; }
+.rb-step h3 { font-size: 1.3rem; margin: 0 0 0.5rem; }
+.rb-step p { color: var(--rb-muted); margin: 0; }
+
 /* --- Manifesto --- */
 .rb-statement-md { font-family: var(--rb-font-display); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; font-size: clamp(2.25rem, 1.4rem + 3.6vw, 3.6rem); margin: 1.5rem 0 2.5rem; }
 .rb-marker { border-left: 3px solid var(--rb-signature); padding-left: 1.5rem; }

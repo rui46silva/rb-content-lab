@@ -25,12 +25,12 @@
 ## Hero
 | Campo | Texto |
 |-------|-------|
-| `hero_eyebrow` | Agência de comunicação · Direction over noise |
+| `hero_eyebrow` | Agência de comunicação estratégica · +5 anos |
 | `hero_word_1` | Menos |
 | `hero_word_strike` | ruído *(aparece riscado)* |
 | `hero_word_2` | Mais |
-| `hero_word_highlight` | direção *(aparece a coral)* |
-| `hero_sub` | A internet está cheia de marcas a gritar. As que vencem não gritam mais alto — comunicam com direção. Ajudamos marcas de alto valor a serem lembradas, não apenas vistas. |
+| `hero_word_highlight` | direção *(aparece a dourado)* |
+| `hero_sub` | Há mais de 5 anos ajudamos marcas a comunicar com clareza e método. Menos publicações ao acaso, mais estratégia — e resultados que se medem. Somos a agência que troca o ruído por direção. |
 | `hero_cta1_label` | Quero o meu diagnóstico gratuito |
 | `hero_cta1_url` | #diagnostico |
 | `hero_cta2_label` | Ver como pensamos → |
@@ -38,8 +38,37 @@
 | `hero_trust` | 30 minutos · Sem compromisso · Saída com um plano, trabalhe connosco ou não |
 
 > **Nota de arte:** o hero mantém o mote como dispositivo visual — a palavra em
-> `hero_word_strike` fica **riscada** e a de `hero_word_highlight` **a coral**. Mude as
+> `hero_word_strike` fica **riscada** e a de `hero_word_highlight` **a dourado**. Mude as
 > palavras à vontade; o efeito mantém-se.
+
+## Setores (credibilidade)
+| Campo | Texto |
+|-------|-------|
+| `sec_eyebrow` | Experiência real |
+| `sec_heading` | Já demos direção a marcas em setores exigentes. |
+| `sec_1` | Automóvel |
+| `sec_2` | Restauração |
+| `sec_3` | Estética, Saúde & Nutrição |
+| `sec_note` | Mais de 5 anos a transformar ruído em estratégia — em mercados onde a atenção se disputa ao segundo. |
+
+> Substitui a "parede de logótipos" que ainda não temos por **credibilidade concreta**:
+> anos de experiência + setores reais. Atualize os setores à medida que crescem.
+
+## Método
+| Campo | Texto |
+|-------|-------|
+| `method_eyebrow` | O método |
+| `method_heading` | Estratégia antes de ruído. Sempre. |
+| `method_1_title` | Diagnóstico |
+| `method_1_text` | Entendemos o negócio, o mercado e os objetivos antes de propor uma única palavra. |
+| `method_2_title` | Estratégia |
+| `method_2_text` | Mensagem, pilares e plano editorial. Cada peça passa a ter uma razão para existir. |
+| `method_3_title` | Execução |
+| `method_3_text` | Conteúdo com padrão e consistência — a direção aplicada, semana após semana. |
+| `method_4_title` | Otimização |
+| `method_4_text` | Medimos, aprendemos e afinamos. Direção é um processo com rigor, não um palpite. |
+
+> Demonstra **estratégia e rigor** de forma explícita — o argumento central da RB.
 
 ## Manifesto
 | Campo | Texto |
@@ -56,13 +85,13 @@
 | Campo | Texto |
 |-------|-------|
 | `proof_eyebrow` | A prova |
-| `proof_heading` | Poucos clientes. Resultados que falam alto. |
-| `proof_m1_value` | +312% |
-| `proof_m1_label` | de leads qualificados para um cliente B2B em 6 meses |
-| `proof_m2_value` | 3x |
-| `proof_m2_label` | alcance orgânico com metade do volume de publicações |
-| `proof_m3_value` | 1 |
-| `proof_m3_label` | mensagem central clara — a diferença entre ser visto e ser lembrado |
+| `proof_heading` | Poucos clientes, por opção. Resultados, por consequência. |
+| `proof_m1_value` | +5 |
+| `proof_m1_label` | anos a dar direção a marcas |
+| `proof_m2_value` | 3 |
+| `proof_m2_label` | setores exigentes servidos — do automóvel à saúde |
+| `proof_m3_value` | +312% |
+| `proof_m3_label` | de leads qualificados para um cliente em 6 meses |
 | `proof_quote` | "Deixámos de andar à procura do que publicar. Em três meses tínhamos um pipeline previsível — e uma marca de que nos orgulhamos." |
 | `proof_quote_author` | [Nome] · CEO @ [Empresa] |
 | `proof_chip` | Garantia de direção |
@@ -80,7 +109,7 @@
 | `offer_bullet_1` | Onde a sua mensagem se está a perder no ruído |
 | `offer_bullet_2` | As 3 alavancas de maior impacto para a sua marca |
 | `offer_bullet_3` | Um próximo passo claro, priorizado por retorno |
-| `offer_next` | O que acontece a seguir: resposta em 24h úteis → agendamos a call → recebe o plano. Sem discurso de vendas. |
+| `offer_next` | O que acontece a seguir: resposta em 24h úteis → agendamos a call → recebe o plano. Aceitamos poucos diagnósticos por mês, para manter o rigor. |
 | `offer_form_title` | Peça o seu diagnóstico |
 | `offer_form_shortcode` | `[fluentform id="1"]` *(trocar pelo ID real do formulário)* |
 | `offer_privacy_note` | Ao enviar, aceita ser contactado sobre o seu pedido. Zero spam — só direção. |
@@ -96,8 +125,8 @@
 | `faq_2_a` | Trabalhamos com marcas de alto valor que vivem da perceção — B2B, SaaS, consultores, marcas premium. O método adapta-se ao setor; o princípio (direção acima do ruído) é universal. |
 | `faq_3_q` | Preciso de ter conteúdo ou estratégia prontos? |
 | `faq_3_a` | Não. Começamos pelo diagnóstico e pela estratégia. Se já tem materiais, aproveitamo-los; se não, construímos do zero com método. |
-| `faq_4_q` | São uma agência jovem — porque devo confiar? |
-| `faq_4_a` | Por isso mesmo damos garantia de direção: se após o primeiro ciclo não tiver uma estratégia mais clara, devolvemos a diferença. Preferimos poucos clientes bem servidos a muitos mal servidos. |
+| `faq_4_q` | Ainda têm poucos clientes — porque devo confiar? |
+| `faq_4_a` | Por opção. Trabalhamos com poucos clientes de cada vez para dar a cada um direção a sério. São mais de 5 anos de experiência em setores exigentes — do automóvel à restauração, estética, saúde e nutrição — e uma garantia que põe o risco do nosso lado. |
 | `faq_5_q` | Quanto custa? |
 | `faq_5_a` | Trabalhamos por projeto e por avença, a partir de escopos desenhados no diagnóstico. Não somos a opção mais barata — somos a que se paga em perceção e pipeline. O diagnóstico é gratuito e sem compromisso. |
 

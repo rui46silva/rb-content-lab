@@ -47,6 +47,14 @@ function rb_landing_register_fields() {
 			array( 'hero_cta2_url', 'CTA secundário — link', 'text' ),
 			array( 'hero_trust', 'Linha de confiança', 'text' ),
 		),
+		'Setores' => array(
+			array( 'sec_eyebrow', 'Sobre-título', 'text' ),
+			array( 'sec_heading', 'Título', 'text' ),
+			array( 'sec_1', 'Setor 1', 'text' ),
+			array( 'sec_2', 'Setor 2', 'text' ),
+			array( 'sec_3', 'Setor 3', 'text' ),
+			array( 'sec_note', 'Nota', 'textarea' ),
+		),
 		'Manifesto' => array(
 			array( 'man_eyebrow', 'Sobre-título', 'text' ),
 			array( 'man_heading', 'Título', 'textarea' ),
@@ -55,6 +63,18 @@ function rb_landing_register_fields() {
 			array( 'man_2_index', 'Bloco 2 — índice', 'text' ),
 			array( 'man_2_text', 'Bloco 2 — texto', 'textarea' ),
 			array( 'man_closing', 'Frase de fecho', 'text' ),
+		),
+		'Método' => array(
+			array( 'method_eyebrow', 'Sobre-título', 'text' ),
+			array( 'method_heading', 'Título', 'text' ),
+			array( 'method_1_title', 'Passo 1 — título', 'text' ),
+			array( 'method_1_text', 'Passo 1 — texto', 'textarea' ),
+			array( 'method_2_title', 'Passo 2 — título', 'text' ),
+			array( 'method_2_text', 'Passo 2 — texto', 'textarea' ),
+			array( 'method_3_title', 'Passo 3 — título', 'text' ),
+			array( 'method_3_text', 'Passo 3 — texto', 'textarea' ),
+			array( 'method_4_title', 'Passo 4 — título', 'text' ),
+			array( 'method_4_text', 'Passo 4 — texto', 'textarea' ),
 		),
 		'Prova' => array(
 			array( 'proof_eyebrow', 'Sobre-título', 'text' ),

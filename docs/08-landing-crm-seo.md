@@ -6,8 +6,9 @@
 ## 1. O que foi construído (no tema)
 
 Um **template PHP** dedicado, com textos editáveis por página (ACF), separado do site
-institucional. Todas as secções (hero, manifesto, prova, oferta+form, FAQ, CTA) vivem em
-`page-templates/landing.php`; os textos em `inc/landing-defaults.php` e editáveis via ACF.
+institucional. As secções (hero, setores/experiência, manifesto, método, prova,
+oferta+form, FAQ, CTA) vivem em `page-templates/landing.php`; os textos em
+`inc/landing-defaults.php` e editáveis via ACF.
 
 | Peça | Ficheiro | Papel |
 |------|----------|-------|

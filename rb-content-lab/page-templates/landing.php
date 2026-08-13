@@ -55,6 +55,20 @@ get_header( 'landing' );
 		</div>
 	</div>
 
+	<!-- SETORES / CREDIBILIDADE -->
+	<section class="rb-bg-paper-2">
+		<div class="rb-container">
+			<p class="rb-eyebrow" data-reveal><?php echo esc_html( rb_lp( 'sec_eyebrow' ) ); ?></p>
+			<h2 class="rb-heading-lg" data-reveal><?php echo esc_html( rb_lp( 'sec_heading' ) ); ?></h2>
+			<ul class="rb-sectors-list" data-reveal>
+				<li><?php echo esc_html( rb_lp( 'sec_1' ) ); ?></li>
+				<li><?php echo esc_html( rb_lp( 'sec_2' ) ); ?></li>
+				<li><?php echo esc_html( rb_lp( 'sec_3' ) ); ?></li>
+			</ul>
+			<p class="rb-muted rb-measure" data-reveal style="margin-top:2rem;"><?php echo esc_html( rb_lp( 'sec_note' ) ); ?></p>
+		</div>
+	</section>
+
 	<!-- MANIFESTO -->
 	<section id="manifesto" class="rb-bg-paper">
 		<div class="rb-container rb-narrow">
@@ -71,6 +85,23 @@ get_header( 'landing' );
 				</div>
 			</div>
 			<p class="rb-manifesto-closing" data-reveal><?php echo esc_html( rb_lp( 'man_closing' ) ); ?></p>
+		</div>
+	</section>
+
+	<!-- MÉTODO -->
+	<section class="rb-bg-paper-2">
+		<div class="rb-container">
+			<p class="rb-eyebrow" data-reveal><?php echo esc_html( rb_lp( 'method_eyebrow' ) ); ?></p>
+			<h2 class="rb-heading-lg" data-reveal><?php echo esc_html( rb_lp( 'method_heading' ) ); ?></h2>
+			<div class="rb-method-grid">
+				<?php for ( $i = 1; $i <= 4; $i++ ) : ?>
+					<div class="rb-step" data-reveal>
+						<p class="rb-step__n">0<?php echo (int) $i; ?></p>
+						<h3><?php echo esc_html( rb_lp( "method_{$i}_title" ) ); ?></h3>
+						<p><?php echo esc_html( rb_lp( "method_{$i}_text" ) ); ?></p>
+					</div>
+				<?php endfor; ?>
+			</div>
 		</div>
 	</section>
 
