@@ -84,21 +84,24 @@
 ## Prova
 | Campo | Texto |
 |-------|-------|
-| `proof_eyebrow` | A prova |
-| `proof_heading` | Poucos clientes, por opção. Resultados, por consequência. |
+| `proof_eyebrow` | Porque confiar na RB |
+| `proof_heading` | Poucos clientes, por opção. Rigor, em cada projeto. |
 | `proof_m1_value` | +5 |
 | `proof_m1_label` | anos a dar direção a marcas |
 | `proof_m2_value` | 3 |
-| `proof_m2_label` | setores exigentes servidos — do automóvel à saúde |
-| `proof_m3_value` | +312% |
-| `proof_m3_label` | de leads qualificados para um cliente em 6 meses |
-| `proof_quote` | "Deixámos de andar à procura do que publicar. Em três meses tínhamos um pipeline previsível — e uma marca de que nos orgulhamos." |
-| `proof_quote_author` | [Nome] · CEO @ [Empresa] |
+| `proof_m2_label` | setores exigentes — automóvel, restauração, estética/saúde |
+| `proof_m3_value` | 4 |
+| `proof_m3_label` | passos de método — do diagnóstico à otimização |
+| `proof_quote` | "Pela primeira vez há um rumo por trás do que publicamos. Deixámos de andar atrás de tendências e passámos a comunicar com intenção." |
+| `proof_quote_author` | [Nome] · [Cargo] @ [Cliente real] |
 | `proof_chip` | Garantia de direção |
 | `proof_guarantee` | Se após o primeiro ciclo não tiver uma estratégia mais clara do que tinha, devolvemos a diferença. O risco é nosso. |
 
-> ⚠️ **Substituir por dados reais.** As métricas e o testemunho são exemplos. A prova só
-> converte com números verdadeiros e nome/empresa reais (com autorização).
+> **Credibilidade honesta, sem números inventados.** Os três indicadores são factos
+> verdadeiros (anos, setores, passos de método) — não resultados fabricados. Quando
+> tiverem **testemunhos reais** (com nome e autorização) ou uma métrica que possam
+> sustentar (ex.: nº de marcas acompanhadas), substituam para reforçar. Nunca inventar
+> percentagens: mina a confiança que a landing existe para construir.
 
 ## Oferta + Formulário
 | Campo | Texto |
@@ -149,7 +152,8 @@
 ---
 
 ## Checklist de conteúdo antes de publicar
-- [ ] Substituir métricas e testemunho por **dados reais** (com autorização).
+- [ ] Substituir o testemunho `[placeholder]` por um **testemunho real** (com autorização).
+- [ ] Nunca inventar métricas de resultado — usar só credibilidade verdadeira.
 - [ ] Confirmar a **garantia de direção** — é um compromisso comercial real.
 - [ ] Criar o formulário no Fluent Forms e colar o ID em `offer_form_shortcode`.
 - [ ] Rever tom e ortografia final.

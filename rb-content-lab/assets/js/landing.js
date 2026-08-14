@@ -61,7 +61,7 @@
 	} );
 
 	/**
-	 * Anima um contador preservando prefixos/sufixos (ex.: "+312%", "3x").
+	 * Anima um contador preservando prefixos/sufixos (ex.: "+5", "3x").
 	 */
 	function animateCount( el ) {
 		var raw = ( el.getAttribute( 'data-count' ) || el.textContent ).trim();
