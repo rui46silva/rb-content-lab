@@ -15,6 +15,25 @@
 > Requer o plugin **ACF** (grátis) ativo para editar no admin. Sem ACF, a página mostra
 > estes textos-base na mesma.
 
+## A landing como storyline
+
+A página lê-se como uma narrativa, não como um catálogo de secções. Cada bloco é um
+**capítulo** (numerado no sobre-título) e conduz ao seguinte:
+
+| # | Capítulo | Papel na história |
+|---|----------|-------------------|
+| — | **Hero** | O mote/título: "menos ruído, mais direção" |
+| 01 | **Experiência real** | Quem somos e a quem já demos direção (credibilidade) |
+| 02 | **Manifesto** | A tensão: toda a gente publica, quase ninguém comunica |
+| 03 | **Método** | Como resolvemos isso, com rigor |
+| 04 | **Porque confiar** | Prova honesta + a nossa promessa (o que não prometemos) |
+| 05 | **O diagnóstico** | O convite: o próximo passo, sem risco |
+| 06 | **FAQ** | Últimas objeções antes do sim |
+| — | **CTA final** | O fecho da história |
+
+Reforçam a narrativa: a **barra de progresso** dourada (mostra o avanço na história) e a
+numeração dos capítulos. Se reordenar secções, ajuste os números nos sobre-títulos.
+
 ---
 
 ## Cabeçalho
@@ -44,7 +63,7 @@
 ## Setores (credibilidade)
 | Campo | Texto |
 |-------|-------|
-| `sec_eyebrow` | Experiência real |
+| `sec_eyebrow` | 01 · Experiência real |
 | `sec_heading` | Já demos direção a marcas em setores exigentes. |
 | `sec_1` | Automóvel |
 | `sec_2` | Restauração |
@@ -57,7 +76,7 @@
 ## Método
 | Campo | Texto |
 |-------|-------|
-| `method_eyebrow` | O método |
+| `method_eyebrow` | 03 · O método |
 | `method_heading` | Estratégia antes de ruído. Sempre. |
 | `method_1_title` | Diagnóstico |
 | `method_1_text` | Entendemos o negócio, o mercado e os objetivos antes de propor uma única palavra. |
@@ -73,7 +92,7 @@
 ## Manifesto
 | Campo | Texto |
 |-------|-------|
-| `man_eyebrow` | O manifesto |
+| `man_eyebrow` | 02 · O manifesto |
 | `man_heading` | Toda a gente publica. Quase ninguém comunica. |
 | `man_1_index` | 01 / RUÍDO |
 | `man_1_text` | Mais posts, mais canais, mais tendências. O calendário enche-se, a marca esvazia-se. Volume não é presença — é ansiedade documentada em público. |
@@ -84,7 +103,7 @@
 ## Prova
 | Campo | Texto |
 |-------|-------|
-| `proof_eyebrow` | Porque confiar na RB |
+| `proof_eyebrow` | 04 · Porque confiar na RB |
 | `proof_heading` | Poucos clientes, por opção. Rigor, em cada projeto. |
 | `proof_m1_value` | +5 |
 | `proof_m1_label` | anos a dar direção a marcas |
@@ -115,7 +134,7 @@
 ## Oferta + Formulário
 | Campo | Texto |
 |-------|-------|
-| `offer_eyebrow` | Diagnóstico gratuito |
+| `offer_eyebrow` | 05 · O diagnóstico |
 | `offer_heading` | 30 minutos que mudam como a sua marca comunica. |
 | `offer_intro` | Analisamos a sua comunicação atual e saímos com um plano concreto — mesmo que decida não trabalhar connosco. |
 | `offer_bullet_1` | Onde a sua mensagem se está a perder no ruído |
@@ -129,7 +148,7 @@
 ## FAQ
 | Campo | Texto |
 |-------|-------|
-| `faq_eyebrow` | Perguntas frequentes |
+| `faq_eyebrow` | 06 · Perguntas frequentes |
 | `faq_heading` | O que costumam perguntar antes de avançar. |
 | `faq_1_q` | Quanto tempo até ver resultados? |
 | `faq_1_a` | Clareza de mensagem nota-se logo no primeiro ciclo (4–6 semanas). Resultados de alcance e pipeline consolidam-se tipicamente entre o 3.º e o 6.º mês — porque construímos autoridade, não picos. |

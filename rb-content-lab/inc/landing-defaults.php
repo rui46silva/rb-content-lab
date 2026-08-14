@@ -40,7 +40,7 @@ function rb_landing_defaults() {
 		'hero_trust'         => '30 minutos · Sem compromisso · Saída com um plano, trabalhe connosco ou não',
 
 		// Setores / credibilidade.
-		'sec_eyebrow'        => 'Experiência real',
+		'sec_eyebrow'        => '01 · Experiência real',
 		'sec_heading'        => 'Já demos direção a marcas em setores exigentes.',
 		'sec_1'              => 'Automóvel',
 		'sec_2'              => 'Restauração',
@@ -48,7 +48,7 @@ function rb_landing_defaults() {
 		'sec_note'           => 'Mais de 5 anos a transformar ruído em estratégia — em mercados onde a atenção se disputa ao segundo.',
 
 		// Método.
-		'method_eyebrow'     => 'O método',
+		'method_eyebrow'     => '03 · O método',
 		'method_heading'     => 'Estratégia antes de ruído. Sempre.',
 		'method_1_title'     => 'Diagnóstico',
 		'method_1_text'      => 'Entendemos o negócio, o mercado e os objetivos antes de propor uma única palavra.',
@@ -60,7 +60,7 @@ function rb_landing_defaults() {
 		'method_4_text'      => 'Medimos, aprendemos e afinamos. Direção é um processo com rigor, não um palpite.',
 
 		// Manifesto.
-		'man_eyebrow'        => 'O manifesto',
+		'man_eyebrow'        => '02 · O manifesto',
 		'man_heading'        => 'Toda a gente publica. Quase ninguém comunica.',
 		'man_1_index'        => '01 / RUÍDO',
 		'man_1_text'         => 'Mais posts, mais canais, mais tendências. O calendário enche-se, a marca esvazia-se. Volume não é presença — é ansiedade documentada em público.',
@@ -69,7 +69,7 @@ function rb_landing_defaults() {
 		'man_closing'        => 'Não fazemos mais conteúdo. Fazemos o conteúdo que faltava.',
 
 		// Prova.
-		'proof_eyebrow'      => 'Porque confiar na RB',
+		'proof_eyebrow'      => '04 · Porque confiar na RB',
 		'proof_heading'      => 'Poucos clientes, por opção. Rigor, em cada projeto.',
 		'proof_m1_value'     => '+5',
 		'proof_m1_label'     => 'anos a dar direção a marcas',
@@ -87,7 +87,7 @@ function rb_landing_defaults() {
 		'promise_no_2'       => 'Contratos que prendem sem entregar valor',
 
 		// Oferta + formulário.
-		'offer_eyebrow'      => 'Diagnóstico gratuito',
+		'offer_eyebrow'      => '05 · O diagnóstico',
 		'offer_heading'      => '30 minutos que mudam como a sua marca comunica.',
 		'offer_intro'        => 'Analisamos a sua comunicação atual e saímos com um plano concreto — mesmo que decida não trabalhar connosco.',
 		'offer_bullet_1'     => 'Onde a sua mensagem se está a perder no ruído',
@@ -99,7 +99,7 @@ function rb_landing_defaults() {
 		'offer_privacy_note' => 'Ao enviar, aceita ser contactado sobre o seu pedido. Zero spam — só direção.',
 
 		// FAQ.
-		'faq_eyebrow'        => 'Perguntas frequentes',
+		'faq_eyebrow'        => '06 · Perguntas frequentes',
 		'faq_heading'        => 'O que costumam perguntar antes de avançar.',
 		'faq_1_q'            => 'Quanto tempo até ver resultados?',
 		'faq_1_a'            => 'Clareza de mensagem nota-se logo no primeiro ciclo (4–6 semanas). Resultados de alcance e pipeline consolidam-se tipicamente entre o 3.º e o 6.º mês — porque construímos autoridade, não picos.',

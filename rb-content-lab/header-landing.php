@@ -18,8 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 </head>
 <body <?php body_class( 'rb-lp' ); ?>>
 <?php wp_body_open(); ?>
+<div class="rb-progress" aria-hidden="true"><span data-progress></span></div>
 <header class="rb-lp-header rb-on-dark" data-header>
-	<div class="rb-container">
+	<nav class="rb-nav" aria-label="<?php esc_attr_e( 'Principal', 'rb-content-lab' ); ?>">
 		<a class="rb-lp-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<?php
 			if ( has_custom_logo() ) {
@@ -32,5 +33,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<span><?php bloginfo( 'name' ); ?></span>
 		</a>
 		<a class="rb-btn rb-btn--primary" href="#diagnostico"><?php echo esc_html( rb_landing_text( 'header_cta_label' ) ); ?></a>
-	</div>
+	</nav>
 </header>

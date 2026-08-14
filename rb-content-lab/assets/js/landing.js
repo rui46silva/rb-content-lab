@@ -63,26 +63,37 @@
 	} );
 
 	/**
-	 * Cabeçalho: sombra ao rolar; esconde ao descer, mostra ao subir.
+	 * Cabeçalho (sombra + esconde ao descer / mostra ao subir) e barra de
+	 * progresso de scroll — o "fio" da narrativa.
 	 */
 	function initHeader() {
 		var header = document.querySelector( '[data-header]' );
-		if ( ! header ) { return; }
+		var progress = document.querySelector( '[data-progress]' );
+		if ( ! header && ! progress ) { return; }
 
 		var lastY = window.pageYOffset || 0;
 		var ticking = false;
 
 		function update() {
 			var y = window.pageYOffset || 0;
-			header.classList.toggle( 'is-scrolled', y > 8 );
 
-			if ( ! reduce ) {
-				if ( y > lastY && y > 140 ) {
-					header.classList.add( 'is-hidden' );   // a descer
-				} else {
-					header.classList.remove( 'is-hidden' ); // a subir
+			if ( header ) {
+				header.classList.toggle( 'is-scrolled', y > 8 );
+				if ( ! reduce ) {
+					if ( y > lastY && y > 140 ) {
+						header.classList.add( 'is-hidden' );   // a descer
+					} else {
+						header.classList.remove( 'is-hidden' ); // a subir
+					}
 				}
 			}
+
+			if ( progress ) {
+				var doc = document.documentElement;
+				var max = ( doc.scrollHeight - window.innerHeight ) || 1;
+				progress.style.width = Math.min( 100, ( y / max ) * 100 ) + '%';
+			}
+
 			lastY = y;
 			ticking = false;
 		}
@@ -90,6 +101,7 @@
 		window.addEventListener( 'scroll', function () {
 			if ( ! ticking ) { window.requestAnimationFrame( update ); ticking = true; }
 		}, { passive: true } );
+		window.addEventListener( 'resize', update, { passive: true } );
 		update();
 	}
 
