@@ -19,6 +19,8 @@
 	}
 
 	ready( function () {
+		initHeader();
+
 		var revealEls = Array.prototype.slice.call( document.querySelectorAll( '[data-reveal]' ) );
 		var counters = Array.prototype.slice.call( document.querySelectorAll( '[data-count]' ) );
 
@@ -59,6 +61,37 @@
 			requestAnimationFrame( function () { hero.classList.add( 'in-view' ); } );
 		}
 	} );
+
+	/**
+	 * Cabeçalho: sombra ao rolar; esconde ao descer, mostra ao subir.
+	 */
+	function initHeader() {
+		var header = document.querySelector( '[data-header]' );
+		if ( ! header ) { return; }
+
+		var lastY = window.pageYOffset || 0;
+		var ticking = false;
+
+		function update() {
+			var y = window.pageYOffset || 0;
+			header.classList.toggle( 'is-scrolled', y > 8 );
+
+			if ( ! reduce ) {
+				if ( y > lastY && y > 140 ) {
+					header.classList.add( 'is-hidden' );   // a descer
+				} else {
+					header.classList.remove( 'is-hidden' ); // a subir
+				}
+			}
+			lastY = y;
+			ticking = false;
+		}
+
+		window.addEventListener( 'scroll', function () {
+			if ( ! ticking ) { window.requestAnimationFrame( update ); ticking = true; }
+		}, { passive: true } );
+		update();
+	}
 
 	/**
 	 * Anima um contador preservando prefixos/sufixos (ex.: "+5", "3x").

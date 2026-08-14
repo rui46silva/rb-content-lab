@@ -113,7 +113,7 @@ get_header( 'landing' );
 			<div class="rb-grid-3">
 				<?php for ( $i = 1; $i <= 3; $i++ ) : ?>
 					<?php $rb_metric = rb_lp( "proof_m{$i}_value" ); ?>
-					<div data-reveal>
+					<div data-reveal="scale">
 						<p class="rb-metric" data-count="<?php echo esc_attr( $rb_metric ); ?>"><?php echo esc_html( $rb_metric ); ?></p>
 						<p><?php echo esc_html( rb_lp( "proof_m{$i}_label" ) ); ?></p>
 					</div>
@@ -121,12 +121,12 @@ get_header( 'landing' );
 			</div>
 			<hr class="rb-hr">
 			<div class="rb-promise">
-				<div data-reveal>
+				<div data-reveal="left">
 					<p class="rb-eyebrow"><?php echo esc_html( rb_lp( 'promise_eyebrow' ) ); ?></p>
 					<h3 class="rb-promise-title"><?php echo esc_html( rb_lp( 'promise_heading' ) ); ?></h3>
 					<p class="rb-muted-2"><?php echo esc_html( rb_lp( 'promise_text' ) ); ?></p>
 				</div>
-				<div data-reveal>
+				<div data-reveal="right">
 					<ul class="rb-promise-list">
 						<li class="is-yes"><?php echo esc_html( rb_lp( 'promise_yes_1' ) ); ?></li>
 						<li class="is-yes"><?php echo esc_html( rb_lp( 'promise_yes_2' ) ); ?></li>
@@ -143,7 +143,7 @@ get_header( 'landing' );
 	<section id="diagnostico" class="rb-bg-paper-2">
 		<div class="rb-container">
 			<div class="rb-offer-grid">
-				<div data-reveal>
+				<div data-reveal="left">
 					<p class="rb-eyebrow"><?php echo esc_html( rb_lp( 'offer_eyebrow' ) ); ?></p>
 					<h2 class="rb-heading-lg"><?php echo esc_html( rb_lp( 'offer_heading' ) ); ?></h2>
 					<p class="rb-muted" style="font-size:1.15rem;"><?php echo esc_html( rb_lp( 'offer_intro' ) ); ?></p>
@@ -154,7 +154,7 @@ get_header( 'landing' );
 					</ul>
 					<p class="rb-muted" style="margin-top:1.5rem;"><?php echo esc_html( rb_lp( 'offer_next' ) ); ?></p>
 				</div>
-				<div class="rb-form-card" data-reveal>
+				<div class="rb-form-card" data-reveal="scale">
 					<h3><?php echo esc_html( rb_lp( 'offer_form_title' ) ); ?></h3>
 					<?php
 					// Formulário Fluent Forms (ligado ao FluentCRM). Renderiza se o plugin estiver ativo.

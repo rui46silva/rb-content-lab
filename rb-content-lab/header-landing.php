@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </head>
 <body <?php body_class( 'rb-lp' ); ?>>
 <?php wp_body_open(); ?>
-<header class="rb-lp-header rb-on-dark rb-bg-ink">
+<header class="rb-lp-header rb-on-dark" data-header>
 	<div class="rb-container">
 		<a class="rb-lp-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<?php

@@ -78,6 +78,8 @@ Tags: custom-colors, custom-logo, editor-style, featured-images, translation-rea
    BASE
    =================================================================== */
 *, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
 	margin: 0;
 	font-family: var(--rb-font-body);
@@ -87,6 +89,7 @@ body {
 	background: var(--rb-paper);
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
+	overflow-wrap: break-word;
 }
 img, svg, video { max-width: 100%; height: auto; display: block; }
 a { color: var(--rb-signature); text-decoration: none; }
@@ -155,8 +158,25 @@ p { margin: 0 0 1rem; }
 	transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 	text-decoration: none;
 	will-change: transform;
+	position: relative;
+	overflow: hidden;
+	isolation: isolate;
 }
 .rb-btn:hover { text-decoration: none; transform: translateY(-2px); }
+/* Brilho que atravessa os botões preenchidos ao passar o rato */
+.rb-btn--primary::after, .rb-btn--ink::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background: linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.28) 50%, transparent 75%);
+	transform: translateX(-130%);
+	transition: transform 0.6s ease;
+}
+.rb-btn--primary:hover::after, .rb-btn--ink:hover::after { transform: translateX(130%); }
+@media (prefers-reduced-motion: reduce) {
+	.rb-btn--primary::after, .rb-btn--ink::after { display: none; }
+}
 .rb-btn--primary { background: var(--rb-signature); color: var(--rb-ink); }
 .rb-btn--primary:hover { background: var(--rb-signature-light); color: var(--rb-ink); box-shadow: 0 12px 30px -10px rgba(200, 162, 74, 0.6); }
 .rb-btn--ink { background: var(--rb-ink); color: var(--rb-paper); }
