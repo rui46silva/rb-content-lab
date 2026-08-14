@@ -22,11 +22,13 @@ oferta+form, FAQ, CTA) vivem em `page-templates/landing.php`; os textos em
 > O **schema FAQPage** é gerado dinamicamente no template a partir dos campos da FAQ —
 > mantém-se sempre em sincronia com o que for editado.
 
-**Estratégia para "poucos clientes":** em vez de uma parede de logótipos que não temos,
-a prova assenta em (1) **resultados com número**, (2) o **método como autoridade**,
-(3) uma **garantia que inverte o risco** ("garantia de direção"), e (4) o manifesto que
+**Estratégia para "poucos clientes":** em vez de logótipos, testemunhos ou garantias que
+ainda não temos, a prova assenta em credibilidade honesta — (1) **experiência real**
+(anos + setores), (2) o **método como autoridade**, (3) uma **promessa transparente** (o
+que prometemos e o que *não* prometemos, sem inventar resultados), e (4) o manifesto que
 _demonstra_ a qualidade em vez de a afirmar. Para uma agência de conteúdo, o texto da
-própria página é o melhor portefólio.
+própria página é o melhor portefólio. O risco-zero é o **diagnóstico gratuito e sem
+compromisso**, não uma garantia de resultados.
 
 ## 2. Publicar a landing (passos)
 
@@ -142,7 +144,7 @@ Fluxo mínimo recomendado, gatilho = *contacto adicionado à lista "Leads – Di
 - **Micro-conversões:** cliques nos CTAs, scroll até ao manifesto, abertura de FAQ.
 - **Taxa alvo inicial:** 2–5% de visitantes→lead numa landing fria bem segmentada.
 - **A/B a testar** (uma variável de cada vez): headline do hero, texto do CTA
-  ("diagnóstico" vs "auditoria" vs "sessão de direção"), presença/ausência da garantia.
+  ("diagnóstico" vs "auditoria" vs "sessão de direção"), a promessa (o que não prometemos).
 
 ## 6. Checklist de go-live da landing
 

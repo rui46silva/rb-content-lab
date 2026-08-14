@@ -77,10 +77,14 @@ function rb_landing_defaults() {
 		'proof_m2_label'     => 'setores exigentes — automóvel, restauração, estética/saúde',
 		'proof_m3_value'     => '4',
 		'proof_m3_label'     => 'passos de método — do diagnóstico à otimização',
-		'proof_quote'        => '"Pela primeira vez há um rumo por trás do que publicamos. Deixámos de andar atrás de tendências e passámos a comunicar com intenção."',
-		'proof_quote_author' => '[Nome] · [Cargo] @ [Cliente real]',
-		'proof_chip'         => 'Garantia de direção',
-		'proof_guarantee'    => 'Se após o primeiro ciclo não tiver uma estratégia mais clara do que tinha, devolvemos a diferença. O risco é nosso.',
+		'promise_eyebrow'    => 'A nossa promessa',
+		'promise_heading'    => 'Não prometemos virais. Prometemos direção.',
+		'promise_text'       => 'As redes mudam todos os dias e ninguém controla o algoritmo — quem promete o contrário está a vender ruído. Nós comprometemo-nos com o que gera resultado sustentável: estratégia clara, método e consistência.',
+		'promise_yes_1'      => 'Estratégia antes de execução',
+		'promise_yes_2'      => 'Método e consistência, semana após semana',
+		'promise_yes_3'      => 'Transparência total — vê o que fazemos e porquê',
+		'promise_no_1'       => 'Promessas de viral ou resultados milagrosos',
+		'promise_no_2'       => 'Contratos que prendem sem entregar valor',
 
 		// Oferta + formulário.
 		'offer_eyebrow'      => 'Diagnóstico gratuito',
@@ -104,7 +108,7 @@ function rb_landing_defaults() {
 		'faq_3_q'            => 'Preciso de ter conteúdo ou estratégia prontos?',
 		'faq_3_a'            => 'Não. Começamos pelo diagnóstico e pela estratégia. Se já tem materiais, aproveitamo-los; se não, construímos do zero com método.',
 		'faq_4_q'            => 'Ainda têm poucos clientes — porque devo confiar?',
-		'faq_4_a'            => 'Por opção. Trabalhamos com poucos clientes de cada vez para dar a cada um direção a sério. São mais de 5 anos de experiência em setores exigentes — do automóvel à restauração, estética, saúde e nutrição — e uma garantia que põe o risco do nosso lado.',
+		'faq_4_a'            => 'Por opção. Trabalhamos com poucos clientes de cada vez para dar a cada um direção a sério. São mais de 5 anos de experiência em setores exigentes — do automóvel à restauração, estética, saúde e nutrição. E o primeiro passo não tem risco: o diagnóstico é gratuito e sem compromisso.',
 		'faq_5_q'            => 'Quanto custa?',
 		'faq_5_a'            => 'Trabalhamos por projeto e por avença, a partir de escopos desenhados no diagnóstico. Não somos a opção mais barata — somos a que se paga em perceção e pipeline. O diagnóstico é gratuito e sem compromisso.',
 

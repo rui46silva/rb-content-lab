@@ -134,6 +134,17 @@
 .rb-proof-guarantee { display: grid; grid-template-columns: 1.6fr 1fr; gap: 3rem; align-items: center; }
 @media (max-width: 860px) { .rb-proof-guarantee { grid-template-columns: 1fr; gap: 2rem; } }
 
+/* Promessa honesta (substitui garantia/testemunho) */
+.rb-promise { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3.5rem; align-items: center; }
+@media (max-width: 860px) { .rb-promise { grid-template-columns: 1fr; gap: 2rem; } }
+.rb-promise-title { font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.1rem); margin: 0.75rem 0 1rem; }
+.rb-promise-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.9rem; }
+.rb-promise-list li { display: flex; align-items: flex-start; gap: 0.85rem; font-size: 1.08rem; line-height: 1.4; }
+.rb-promise-list li::before { font-family: var(--rb-font-mono); font-weight: 700; flex: none; }
+.rb-promise-list li.is-yes::before { content: "\2713"; color: var(--rb-signature); }
+.rb-promise-list li.is-no { color: var(--rb-muted-2); }
+.rb-promise-list li.is-no::before { content: "\00D7"; color: var(--rb-muted-2); font-size: 1.2rem; line-height: 1.1; }
+
 /* --- Oferta + formulário --- */
 .rb-offer-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: start; }
 @media (max-width: 860px) { .rb-offer-grid { grid-template-columns: 1fr; gap: 2.5rem; } }

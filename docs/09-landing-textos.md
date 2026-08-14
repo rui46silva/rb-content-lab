@@ -92,16 +92,25 @@
 | `proof_m2_label` | setores exigentes — automóvel, restauração, estética/saúde |
 | `proof_m3_value` | 4 |
 | `proof_m3_label` | passos de método — do diagnóstico à otimização |
-| `proof_quote` | "Pela primeira vez há um rumo por trás do que publicamos. Deixámos de andar atrás de tendências e passámos a comunicar com intenção." |
-| `proof_quote_author` | [Nome] · [Cargo] @ [Cliente real] |
-| `proof_chip` | Garantia de direção |
-| `proof_guarantee` | Se após o primeiro ciclo não tiver uma estratégia mais clara do que tinha, devolvemos a diferença. O risco é nosso. |
+| `promise_eyebrow` | A nossa promessa |
+| `promise_heading` | Não prometemos virais. Prometemos direção. |
+| `promise_text` | As redes mudam todos os dias e ninguém controla o algoritmo — quem promete o contrário está a vender ruído. Nós comprometemo-nos com o que gera resultado sustentável: estratégia clara, método e consistência. |
+| `promise_yes_1` | Estratégia antes de execução |
+| `promise_yes_2` | Método e consistência, semana após semana |
+| `promise_yes_3` | Transparência total — vê o que fazemos e porquê |
+| `promise_no_1` | Promessas de viral ou resultados milagrosos |
+| `promise_no_2` | Contratos que prendem sem entregar valor |
 
-> **Credibilidade honesta, sem números inventados.** Os três indicadores são factos
-> verdadeiros (anos, setores, passos de método) — não resultados fabricados. Quando
-> tiverem **testemunhos reais** (com nome e autorização) ou uma métrica que possam
-> sustentar (ex.: nº de marcas acompanhadas), substituam para reforçar. Nunca inventar
-> percentagens: mina a confiança que a landing existe para construir.
+> **Credibilidade honesta, sem números inventados nem promessas que não controlamos.**
+> Os três indicadores são factos verdadeiros (anos, setores, passos de método). Em vez de
+> uma garantia de resultados (que dependem de algoritmos instáveis) ou de testemunhos que
+> ainda não temos, a prova assenta numa **promessa honesta**: o que prometemos e o que
+> *não* prometemos. Esta transparência é o diferenciador — apela a quem já foi enganado
+> por agências que prometem virais.
+>
+> **Quando tiverem** testemunhos reais (com nome e autorização), mini-casos ou uma métrica
+> sustentável, acrescentem para reforçar. Nunca inventar percentagens nem prometer
+> resultados garantidos.
 
 ## Oferta + Formulário
 | Campo | Texto |
@@ -129,7 +138,7 @@
 | `faq_3_q` | Preciso de ter conteúdo ou estratégia prontos? |
 | `faq_3_a` | Não. Começamos pelo diagnóstico e pela estratégia. Se já tem materiais, aproveitamo-los; se não, construímos do zero com método. |
 | `faq_4_q` | Ainda têm poucos clientes — porque devo confiar? |
-| `faq_4_a` | Por opção. Trabalhamos com poucos clientes de cada vez para dar a cada um direção a sério. São mais de 5 anos de experiência em setores exigentes — do automóvel à restauração, estética, saúde e nutrição — e uma garantia que põe o risco do nosso lado. |
+| `faq_4_a` | Por opção. Trabalhamos com poucos clientes de cada vez para dar a cada um direção a sério. São mais de 5 anos de experiência em setores exigentes — do automóvel à restauração, estética, saúde e nutrição. E o primeiro passo não tem risco: o diagnóstico é gratuito e sem compromisso. |
 | `faq_5_q` | Quanto custa? |
 | `faq_5_a` | Trabalhamos por projeto e por avença, a partir de escopos desenhados no diagnóstico. Não somos a opção mais barata — somos a que se paga em perceção e pipeline. O diagnóstico é gratuito e sem compromisso. |
 
@@ -152,9 +161,8 @@
 ---
 
 ## Checklist de conteúdo antes de publicar
-- [ ] Substituir o testemunho `[placeholder]` por um **testemunho real** (com autorização).
-- [ ] Nunca inventar métricas de resultado — usar só credibilidade verdadeira.
-- [ ] Confirmar a **garantia de direção** — é um compromisso comercial real.
+- [ ] Nunca inventar métricas nem prometer resultados garantidos — usar só credibilidade verdadeira.
+- [ ] Quando existirem, acrescentar **testemunhos reais** ou mini-casos (com autorização).
 - [ ] Criar o formulário no Fluent Forms e colar o ID em `offer_form_shortcode`.
 - [ ] Rever tom e ortografia final.
 - [ ] Definir title/meta/OG no Rank Math (ver [doc 08](08-landing-crm-seo.md)).

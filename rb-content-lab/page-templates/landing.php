@@ -120,14 +120,20 @@ get_header( 'landing' );
 				<?php endfor; ?>
 			</div>
 			<hr class="rb-hr">
-			<div class="rb-proof-guarantee">
+			<div class="rb-promise">
 				<div data-reveal>
-					<p class="rb-quote"><?php echo esc_html( rb_lp( 'proof_quote' ) ); ?></p>
-					<p class="rb-quote-author"><?php echo esc_html( rb_lp( 'proof_quote_author' ) ); ?></p>
+					<p class="rb-eyebrow"><?php echo esc_html( rb_lp( 'promise_eyebrow' ) ); ?></p>
+					<h3 class="rb-promise-title"><?php echo esc_html( rb_lp( 'promise_heading' ) ); ?></h3>
+					<p class="rb-muted-2"><?php echo esc_html( rb_lp( 'promise_text' ) ); ?></p>
 				</div>
 				<div data-reveal>
-					<span class="rb-chip"><?php echo esc_html( rb_lp( 'proof_chip' ) ); ?></span>
-					<p class="rb-muted" style="margin-top:1rem;"><?php echo esc_html( rb_lp( 'proof_guarantee' ) ); ?></p>
+					<ul class="rb-promise-list">
+						<li class="is-yes"><?php echo esc_html( rb_lp( 'promise_yes_1' ) ); ?></li>
+						<li class="is-yes"><?php echo esc_html( rb_lp( 'promise_yes_2' ) ); ?></li>
+						<li class="is-yes"><?php echo esc_html( rb_lp( 'promise_yes_3' ) ); ?></li>
+						<li class="is-no"><?php echo esc_html( rb_lp( 'promise_no_1' ) ); ?></li>
+						<li class="is-no"><?php echo esc_html( rb_lp( 'promise_no_2' ) ); ?></li>
+					</ul>
 				</div>
 			</div>
 		</div>
