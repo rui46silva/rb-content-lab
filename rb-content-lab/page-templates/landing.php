@@ -50,12 +50,11 @@ get_header( 'landing' );
 		<div class="rb-marquee__track">
 			<?php
 			$rb_marquee = '<span>Direction over noise <b>&#9670;</b> Comunicação com direção <b>&#9670;</b> Menos ruído, mais autoridade <b>&#9670;</b> </span>';
-			echo $rb_marquee . $rb_marquee; // Duplicado para loop contínuo. phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $rb_marquee . $rb_marquee; 
 			?>
 		</div>
 	</div>
 
-	<!-- SETORES / CREDIBILIDADE -->
 	<section class="rb-bg-paper-2">
 		<div class="rb-container">
 			<p class="rb-eyebrow" data-reveal><?php echo esc_html( rb_lp( 'sec_eyebrow' ) ); ?></p>
